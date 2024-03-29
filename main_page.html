@@ -8,29 +8,54 @@
 		<meta name ="author" content="Bojana Paunović">
 		<title>FestiLink | Dobro došli</title>
 		<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 	</head>
 <body>
     <header>
-        <div class="logo">
-            <nav class="navbar" id="navbar">
-                <div class="container">
-                    <img src="pictures/festilink-high-resolution-logo-transparent.png" alt="FestiLink logo" width = 16%>
-                  <ul class="nav-links">
-                    <li><a href="#">Istražite festivale</a></li>
-                    <li><a href="#">Za organizatore</a></li>
-                    <li><a href="#">O nama</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                  </ul>
-                </div>
-              </nav>
-        </div>
+      <img src="C:\Users\pauno\OneDrive\Radna površina\jade-masri-74tlEYKgrBE-unsplash.jpg" alt="Festival" width="100%">
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="pictures/festilink-high-resolution-logo-transparent.png" width="200px"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><strong>Home</strong></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <strong>Istražite festivale</strong>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#"><strong>Example 1</strong></a></li>
+                      <li><a class="dropdown-item" href="#"><strong>Example 2</strong></a></li>
+                      <li><a class="dropdown-item" href="#"><strong>Example 3</strong></a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><strong>Za organizatore</strong></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><strong>O nama</strong></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
     </header>
-    <script src="navscroll.js"></script>
-    <section id="showcase">
-		<img src="https://media.istockphoto.com/id/1441599728/photo/three-friends-dancing-at-the-music-festival-in-sunny-day.jpg?s=612x612&w=0&k=20&c=aqD688JNAli1o-aK2sFepgCSeCJ7yy239ECXJH5labw=" alt="Festival">
-        <img src="https://media.istockphoto.com/id/1441599728/photo/three-friends-dancing-at-the-music-festival-in-sunny-day.jpg?s=612x612&w=0&k=20&c=aqD688JNAli1o-aK2sFepgCSeCJ7yy239ECXJH5labw=" alt="Festival">
-        <img src="https://media.istockphoto.com/id/1441599728/photo/three-friends-dancing-at-the-music-festival-in-sunny-day.jpg?s=612x612&w=0&k=20&c=aqD688JNAli1o-aK2sFepgCSeCJ7yy239ECXJH5labw=" alt="Festival">
-	</section>
-    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>  
+    const navE1 = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY >= 56) {
+        navE1.classList.add('navbar-scrolled');
+      } else if (window.scrollY < 56){
+        navE1.classList.remove('navbar-scrolled');
+      }
+    });
+  </script>
 </body>
 </html>

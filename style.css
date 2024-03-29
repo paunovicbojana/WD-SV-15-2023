@@ -1,77 +1,66 @@
-* {
-        background: #ECE5D5;
-        margin: 0;
-}
 @font-face {
-        font-family: 'Aclonica', 'Alatsi';
-        src: url(/fonts/Aclonica.ttf);
-        src: url(/fonts/Alatsi.ttf);
-     }
+    font-family: 'Aclonica', 'Alatsi';
+    src: url(/fonts/Aclonica.ttf);
+    src: url(/fonts/Alatsi.ttf);
+ }
 
-.logo{
-        margin-left: 3%;
-	    overflow:hidden;
-        padding: 1%;
-        padding-top: 3%;
-        
+* {
+    font-family: 'Aclonica', 'Alatsi';
 }
+
 
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
+    font-size: 1.2em;
+    transition: all 0.4s ease-in-out;
     width: 100%;
-    background-color: transparent;
-    padding: 20px 0;
-    z-index: 1000; /* Ensures the navbar is above other content */
-    transition: background-color 0.1s ease; /* Add transition for smooth color change */
-  }
-  
-  .navbar.opaque {
-    background-color: #ECE5D5; /* Change background color when scrolled */
-  }
-    
-    .container {
-            /* max-width: 1200px; */
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.3em;
-        padding-left: 5%;
-        padding-right: 5%;
-        background-color: #ECE5D5;
+}
+
+.navbar img {
+    overflow: hidden;
+    padding: 1%;
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.navbar-toggler {
+    margin-left: auto;
+    float: right;
+}
+
+.navbar-collapse {
+    padding: 15px;
+}
+
+#showcase {
+    margin-top: 300px;
+}
+
+@media (max-width: 1000px) {
+    .navbar-brand {
+        width: 72%;
     }
-    
-    .nav-links {
-        list-style: none;
-        display: flex;
-    }
-    
-    .nav-links li {
-        margin-right: 20px;
-    }
-    
-    .nav-links li:last-child {
-        margin-right: 0;
-    }
-    
-    .nav-links a {
-        text-decoration: none;
-        color: #3D3028;
-        font-weight: bold;
-        transition: color 0.4s linear;
-        padding: 5px 10px;
-    }
-    
-    .nav-links a:hover {
-        color: #ECE5D5;
-        background-color: #5e652a;
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
-    
-    #showcase {
-        min-height: 400px;
-        text-align: center;
-    }
+}
+
+.navbar-nav .nav-link {
+    margin-right: 15px;
+}
+a.dropdown-item:hover {
+    color: #e6ddc7c1 !important;
+    background-color: #5e652a;
+    border-radius: 5px;
+    transition: background-color 0.3s linear;
+}
+
+.navbar-scrolled {
+    background-color: #e6ddc7c1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav > nav-item{
+    color:#3D3028;
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0;
+}
