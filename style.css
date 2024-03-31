@@ -17,18 +17,19 @@
 
 .navbar img {
     overflow: hidden;
-    padding: 1%;
+    padding: 4%;
     padding-left: 5%;
     padding-right: 10%;
 }
 
 .navbar-toggler {
     margin-left: auto;
-    float: right;
-}
+    float: right;}
 
-.navbar-collapse {
-    padding: 15px;
+.collapse navbar-collapse {
+    padding: 1%;
+    background-color: #e6ddc7;
+    border-radius: 5px;
 }
 
 #showcase {
@@ -37,15 +38,23 @@
 
 @media (max-width: 1000px) {
     .navbar-brand {
-        width: 72%;
+        width: 72%;}
+    .navbar{
+        padding: 1%;
+    background-color: #e6e1d6;
+    border-radius: 5px;
+    .dropdown-menu{
+        background-color: #ddd5c5;
+    border-radius: 5px;
     }
+}
 }
 
 .navbar-nav .nav-link {
     margin-right: 15px;
 }
 a.dropdown-item:hover {
-    color: #e6ddc7c1 !important;
+    color: #e6e1d6 !important;
     background-color: #5e652a;
     border-radius: 5px;
     transition: background-color 0.3s linear;
@@ -64,3 +73,16 @@ a.dropdown-item:hover {
     width: 100%;
     padding: 0;
 }
+
+#message {
+	padding: 3%;
+	color: #3D3028;
+	background: #e6e1d6;
+	border-bottom: #5e652a 3px solid;
+}
+#message h1{
+	font-size:1.8em;
+    text-align: center;
+}
+
+.navbar-nav > li > .dropdown-menu { background-color: #ddd5c5; border-radius: 5px; border-color: #e6ddc7;}
