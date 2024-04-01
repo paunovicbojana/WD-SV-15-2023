@@ -1,10 +1,13 @@
-
 * {
-    font-family: "Didot", serif;
+    .akaya-telivigala-regular {
+        font-family: "Akaya Telivigala", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
 }
 
-
 .navbar {
+    
     font-size: 1.2em;
     transition: all 0.4s ease-in-out;
     width: 100%;
@@ -42,7 +45,7 @@
         background-color: #ddd5c5;
     border-radius: 5px;
     }
-}
+  }
 }
 
 .navbar-nav .nav-link {
@@ -91,6 +94,7 @@ a.dropdown-item{
     background: linear-gradient(30deg, #d6c8ab, #5e652a);
 }
 .org1 h3 {
+    
     font-size: 1.8em;
     color: #ffffff;
     padding-left: 2%;
@@ -103,9 +107,7 @@ a.dropdown-item{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
 }
-
 
 .cards {
     display: flex;
@@ -197,6 +199,16 @@ a.dropdown-item{
     fill: #474C1D;
 }
 
+.footer {
+    background-color: #474C1D;
+    color: #ffffff;
+    text-align: center;
+    padding: 1%;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
 .custom-shape-divider-bottom-1711913753 {
     position: absolute;
     bottom: 0;
@@ -226,4 +238,9 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    font-size: 1.1em;
+}
+
+footer img {
+    margin: 5px;
 }
