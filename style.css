@@ -15,6 +15,14 @@
     background-position: center;
     background-repeat: no-repeat;}
 
+    .hero-gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+    }
 .navbar {
     
     font-size: 1.2em;
@@ -89,10 +97,9 @@ a.dropdown-item{
     background: linear-gradient(30deg, #d6c8ab, #5e652a);
 }
 .org1 h3 {
-    
     font-size: 1.8em;
     color: #ffffff;
-    padding-left: 2%;
+    padding-left: 3%;
     font-weight: bold;
 }
 .organizers {
@@ -234,7 +241,7 @@ footer {
     bottom: 0;
     width: 100%;
     font-size: 1.1em;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
     padding-top: 3%;
 }
 
