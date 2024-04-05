@@ -256,6 +256,22 @@ footer img {
     margin-top: 5%;
 }
 
+.fest_cont {
+    background: linear-gradient(30deg, #d6c8ab, #5e652a);
+    min-height: 100vh;
+    position: top;
+    margin-top: 0;
+}
+
+.pic_cont {
+    display: block;
+    justify-content: left;
+    align-items: left;
+    flex-wrap: wrap;
+    padding: 7%;
+    margin-right: 10%;
+}
+
 @media (max-width: 1000px) {
     .navbar-brand {
         width: 72%;}
