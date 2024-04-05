@@ -52,8 +52,8 @@
     </header>
     <div class="fest_cont">
     <div class="frame">
-    <div class="pic_cont">
-      <img src="https://i.imgur.com/OV15WM6.jpeg" alt="BeoArt Fest" width="500px">
+    <div class="sticky-container">
+      <img src="https://i.imgur.com/OV15WM6.jpeg" alt="BeoArt Fest" id="sticky-image">
     </div>
   </div>
     <div class="info">
@@ -84,18 +84,17 @@
           ><img src="../pictures/twitter.png" alt="twitter ikonica" width="35px"
         /></a>
   </footer>
-  
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>  
       const navE1 = document.querySelector('.navbar');
       window.addEventListener('scroll', () => {
-        if(window.scrollY >= 56) {
-          navE1.classList.add('navbar-scrolled');
-        } else if (window.scrollY < 56){
-          navE1.classList.remove('navbar-scrolled');
-        }
+          navE1.classList.add('navbar-scrolled2');
+      });
+      document.addEventListener("DOMContentLoaded", function() {
+        navE1.classList.add('navbar-scrolled2');
       });
     </script>
     <script src="read_more.js"></script>
+    <script src="sticky_elem.js"></script>
   </html>

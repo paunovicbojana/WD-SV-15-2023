@@ -70,6 +70,11 @@ a.dropdown-item{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.navbar-scrolled2 {
+    background-color: #d6c8abee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .navbar-nav > nav-item{
     color:#3D3028;
 }
@@ -263,13 +268,24 @@ footer img {
     margin-top: 0;
 }
 
-.pic_cont {
-    display: block;
-    justify-content: left;
-    align-items: left;
-    flex-wrap: wrap;
-    padding: 7%;
-    margin-right: 10%;
+.content {
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Container for the sticky image */
+.sticky-container {
+    position: relative;
+    height: 0; /* Necessary for absolute positioning */
+}
+
+/* Styles for the sticky image */
+#sticky-image {
+    position: absolute;
+    top: 150px; /* Initial position */
+    left: 80px;
+    z-index: 1000; /* Ensures the image appears above other content */
+    width: 100vh;
 }
 
 @media (max-width: 1000px) {
