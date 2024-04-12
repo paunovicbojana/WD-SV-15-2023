@@ -14,7 +14,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 0;
 }
 .hero-gradient h1 {
   font-size: 4em;
@@ -554,9 +553,7 @@ footer img {
 .form-box {
   position: relative;
 }
-.overlay {
-  position: relative;
-}
+
 #prijava {
   border: none;
   background: transparent;
