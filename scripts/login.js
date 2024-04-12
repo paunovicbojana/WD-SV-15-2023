@@ -28,7 +28,6 @@ login.addEventListener("click", () => {
 });
 
 registerLink.addEventListener("click", () => {
-  /*wrapper.classList.add("active");*/
   registrationForm1.classList.add("active");
   loginForm.classList.remove("active");
 });
@@ -46,3 +45,24 @@ nextLink2.addEventListener("click", () => {
   registrationForm2.classList.remove("active");
   registrationForm3.classList.add("active");
 });
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+function toggleOverlay() {
+  wrapper.classList.toggle("active");
+
+  if (wrapper.classList.contains("active")) {
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+  } else {
+    document.body.style.overflow = "";
+    document.body.style.height = "";
+  }
+}
+
+login.addEventListener("click", scrollToTop);

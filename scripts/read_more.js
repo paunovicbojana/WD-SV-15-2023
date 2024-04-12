@@ -10,7 +10,7 @@ xhttp.onreadystatechange = function () {
       let data = JSON.parse(this.responseText);
       for (let obj in data) {
         let organizator = data[obj];
-        createCard(organizator);
+        createCard(obj, organizator);
       }
       parent.lastElementChild.id = "c3";
     } else {
@@ -21,7 +21,7 @@ xhttp.onreadystatechange = function () {
 xhttp.open("GET", firebasedatabase + "/organizatoriFestivala.json");
 xhttp.send();
 
-function createCard(organizator) {
+function createCard(obj, organizator) {
   let card = document.createElement("div");
   card.classList.add("cards");
   card.innerHTML = `
@@ -33,7 +33,7 @@ function createCard(organizator) {
         <p>${organizator["adresa"]}<br>
           ${organizator["kontaktTelefon"]}<br>
           ${organizator["email"]}<br>
-        <a href="./organizers/organizer.html?festivals=${organizator["festivali"]}" class="rm">Pročitajte više...</a></p>
+        <a href="./organizers/organizer.html?organizer=${obj}&festivals=${organizator["festivali"]}" class="rm">Pročitajte više...</a></p>
       </div>
     </div>
   `;
