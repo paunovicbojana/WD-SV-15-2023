@@ -34,21 +34,23 @@ function createCard(festival_id, festival_data) {
 
   card.classList.add("cards2");
   let unutrasnjiHTML = `
-      <div id="${festival_id}" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div id="${festival_id}" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
     `;
-  let aktivni = true;
-  for (let slika of festival_data["slike"]) {
+  let aktivni;
+  for (let i = 0; i < festival_data["slike"].length; i++) {
+    let slika = festival_data["slike"][i];
+    aktivni = i === 0;
     unutrasnjiHTML += `
       <div class="carousel-item ${aktivni ? "active" : ""}">
       <div class="crop-container">
         <img src="${slika}" class="d-block w-100" alt="${
       festival_data["naziv"]
-    } logo">
+    } logo" style="object-fit: contain;
+  object-position: center center; height:100%">
     </div>
       </div>
     `;
-    aktivni = false;
   }
   unutrasnjiHTML += `
         </div>
