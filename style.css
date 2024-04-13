@@ -8,21 +8,25 @@
 .hero {
   width: 100%;
   height: 100vh;
-  background-image: url("pictures/jade-masri-74tlEYKgrBE-unsplash.jpg");
   top: 0;
   position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+#hero {
+  background-image: url("pictures/jade-masri-74tlEYKgrBE-unsplash.jpg");
+}
+
 .hero-gradient h1 {
-  font-size: 4em;
+  font-size: 3em;
   color: #ffffff;
   text-align: center;
-  padding-top: 20%;
+  padding-top: 40%;
   font-weight: bold;
   z-index: 1;
   text-shadow: #3d3028 2px 2px;
+  position: absolute;
 }
 .hero-gradient {
   position: absolute;
@@ -35,6 +39,17 @@
   justify-content: center;
   align-items: center;
 }
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .navbar {
   font-size: 1.2em;
   transition: all 0.4s ease-in-out;
@@ -43,7 +58,7 @@
 
 .navbar img {
   overflow: hidden;
-  padding: 4%;
+  padding: 2%;
   padding-left: 5%;
   padding-right: 10%;
 }
@@ -123,6 +138,7 @@ a.dropdown-item {
   color: #ffffff;
   padding-left: 3%;
   font-weight: bold;
+  font-family: "Akaya Telivigala", sans-serif;
 }
 .organizers {
   position: relative;
@@ -283,14 +299,14 @@ footer img {
 }
 
 .fest_cont {
-  max-height: 180vh;
+  max-height: 500vh;
+  padding-bottom: 20vh;
   position: relative;
   flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 15vh;
 }
 
 .content {
@@ -421,7 +437,7 @@ footer img {
 }
 
 .wrapper.active .form-box h2 {
-  color: #373a16;
+  color: #ffffff;
   font-size: 2em;
   font-weight: bold;
   text-align: center;
@@ -432,7 +448,7 @@ footer img {
   position: relative;
   width: 100%;
   height: 50px;
-  border-bottom: 2px solid #373a16;
+  border-bottom: 2px solid #ffffff;
   margin: 10px 0;
 }
 
@@ -442,11 +458,11 @@ footer img {
   background: none;
   border: none;
   outline: none;
-  color: #373a16;
+  color: #ffffff;
   font-weight: bold;
 }
 ::placeholder {
-  color: #373a16;
+  color: #ffffff;
   opacity: 1;
 }
 .btn1 {

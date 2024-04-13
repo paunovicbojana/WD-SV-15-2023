@@ -10,7 +10,7 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="../pictures/android-chrome-512x512.png"
+      href="pictures/android-chrome-512x512.png"
     />
     <link rel="stylesheet" href="../style.css" />
     <link
@@ -34,111 +34,109 @@
       src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"
     ></script>
   </head>
-  <body class="body2">
-    <div class="overlay" id="overlay"></div>
-    <div class="wrapper">
-      <div class="form-box login active">
-        <span class="icon-close"
-          ><ion-icon name="close" onclick="toggleOverlay()"></ion-icon
-        ></span>
-        <h2>Prijavite se</h2>
-        <form action="#">
-          <div class="input-box">
-            <input type="text" placeholder="Korisničko ime" />
+  <body>
+    <header class="hero" id="hero2">
+      <div class="hero-gradient" id="hero-gradient2">
+        <div class="wrapper">
+          <div class="form-box login active">
+            <span class="icon-close"
+              ><ion-icon name="close" onclick="toggleOverlay()"></ion-icon
+            ></span>
+            <h2>Prijavite se</h2>
+            <form action="#">
+              <div class="input-box">
+                <input type="text" placeholder="Korisničko ime" />
+              </div>
+              <div class="input-box">
+                <input type="password" placeholder="Lozinka" />
+              </div>
+              <div class="button-box">
+                <button type="submit" class="btn1">Login</button>
+              </div>
+              <div class="text-box">
+                <p class="login-register">
+                  Nemate nalog?
+                  <a href="#" class="register-link">Registrujte se</a>
+                </p>
+              </div>
+            </form>
           </div>
-          <div class="input-box">
-            <input type="password" placeholder="Lozinka" />
-          </div>
-          <div class="button-box">
-            <button type="submit" class="btn1">Login</button>
-          </div>
-          <div class="text-box">
-            <p class="login-register">
-              Nemate nalog?
-              <a href="#" class="register-link">Registrujte se</a>
-            </p>
-          </div>
-        </form>
-      </div>
 
-      <div class="form-box registration1">
-        <span class="icon-close"
-          ><ion-icon name="close" onclick="toggleOverlay()"></ion-icon
-        ></span>
-        <h2>Registrujte se 1/3</h2>
-        <form action="#">
-          <div class="input-box">
-            <input type="text" placeholder="Korisničko ime" />
+          <div class="form-box registration1">
+            <span class="icon-close"
+              ><ion-icon name="close" onclick="toggleOverlay()"></ion-icon
+            ></span>
+            <h2>Registrujte se 1/3</h2>
+            <form action="#">
+              <div class="input-box">
+                <input type="text" placeholder="Korisničko ime" />
+              </div>
+              <div class="input-box">
+                <input type="password" placeholder="Lozinka" />
+              </div>
+              <div class="input-box">
+                <input type="email" placeholder="E-mail adresa" />
+              </div>
+              <div class="button-box">
+                <button type="submit" class="btn1" class="next-link1" id="reg1">
+                  Next
+                </button>
+              </div>
+              <div class="text-box">
+                <p class="login-register">
+                  Imate nalog?
+                  <a href="#" class="login-link">Prijavite se</a>
+                </p>
+              </div>
+            </form>
           </div>
-          <div class="input-box">
-            <input type="password" placeholder="Lozinka" />
-          </div>
-          <div class="input-box">
-            <input type="email" placeholder="E-mail adresa" />
-          </div>
-          <div class="button-box">
-            <button type="submit" class="btn1" class="next-link1" id="reg1">
-              Next
-            </button>
-          </div>
-          <div class="text-box">
-            <p class="login-register">
-              Imate nalog?
-              <a href="#" class="login-link">Prijavite se</a>
-            </p>
-          </div>
-        </form>
-      </div>
 
-      <div class="form-box registration2">
-        <span class="icon-close"
-          ><ion-icon name="close" onclick="toggleOverlay()"></ion-icon
-        ></span>
-        <h2>Registrujte se 2/3</h2>
-        <form action="#">
-          <div class="input-box">
-            <input type="text" placeholder="Ime" />
+          <div class="form-box registration2">
+            <span class="icon-close"
+              ><ion-icon name="close" onclick="toggleOverlay()"></ion-icon
+            ></span>
+            <h2>Registrujte se 2/3</h2>
+            <form action="#">
+              <div class="input-box">
+                <input type="text" placeholder="Ime" />
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Prezime" />
+              </div>
+              <div class="input-box">
+                <input type="date" placeholder="Datum rođenja" />
+              </div>
+              <div class="button-box">
+                <button type="submit" class="btn1" class="next-link2" id="reg2">
+                  Next
+                </button>
+              </div>
+            </form>
           </div>
-          <div class="input-box">
-            <input type="text" placeholder="Prezime" />
+          <div class="form-box registration3">
+            <span class="icon-close"
+              ><ion-icon name="close" onclick="toggleOverlay()"></ion-icon
+            ></span>
+            <h2>Registrujte se 3/3</h2>
+            <form action="#">
+              <div class="input-box">
+                <input type="text" placeholder="Adresa" />
+              </div>
+              <div class="input-box">
+                <input type="tel" placeholder="Broj telefona" />
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Zanimanje" />
+              </div>
+              <div class="button-box">
+                <button type="submit" class="btn1" id="reg3">Register</button>
+              </div>
+            </form>
           </div>
-          <div class="input-box">
-            <input type="date" placeholder="Datum rođenja" />
-          </div>
-          <div class="button-box">
-            <button type="submit" class="btn1" class="next-link2" id="reg2">
-              Next
-            </button>
-          </div>
-        </form>
-      </div>
-      <div class="form-box registration3">
-        <span class="icon-close"
-          ><ion-icon name="close" onclick="toggleOverlay()"></ion-icon
-        ></span>
-        <h2>Registrujte se 3/3</h2>
-        <form action="#">
-          <div class="input-box">
-            <input type="text" placeholder="Adresa" />
-          </div>
-          <div class="input-box">
-            <input type="tel" placeholder="Broj telefona" />
-          </div>
-          <div class="input-box">
-            <input type="text" placeholder="Zanimanje" />
-          </div>
-          <div class="button-box">
-            <button type="submit" class="btn1" id="reg3">Register</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <header>
-      <div class="organizers">
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
           <div class="container-fluid">
-            <a class="navbar-brand" href="../main_page.html"
+            <a class="navbar-brand" id="logo" href="../main_page.html"
               ><img
                 src="../pictures/festilink-high-resolution-logo-transparent.png"
                 width="230px"
@@ -160,6 +158,7 @@
                   <a
                     class="nav-link active"
                     aria-current="page"
+                    id="home"
                     href="../main_page.html"
                     style="color: #3d3028"
                     ><strong>Home</strong></a
@@ -220,40 +219,39 @@
         </nav>
       </div>
     </header>
-    <div class="custom-shape-divider-top-1711911376">
-      <svg
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1200 120"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-          opacity=".25"
-          class="shape-fill"
-        ></path>
-        <path
-          d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-          opacity=".5"
-          class="shape-fill"
-        ></path>
-        <path
-          d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-          class="shape-fill"
-        ></path>
-      </svg>
+
+    <!-- 
+      <section id="message">
+        <img src="pictures/hot-air-balloons-4561264_1280-removebg-preview-removebg-preview.png" width="200px">
+      <h1><strong>Festivali koji inspirišu, organizacija koja fascinira.</strong></h1>
+      </section>-->
+    <div class="org1">
+      <div class="custom-shape-divider-top-1711911376">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+      <h3 id="c2">Naši festivali</h3>
+      <div class="fest_cont" id="fest_cont"></div>
     </div>
-    <h3
-      style="
-        font-size: 1.8em;
-        color: #ffffff;
-        padding-left: 3%;
-        font-weight: bold;
-      "
-    >
-      Naši festivali
-    </h3>
-    <div class="fest_cont" id="fest_cont"></div>
 
     <div class="footer">
       <div class="custom-shape-divider-bottom-1711913753" id="c1">
@@ -301,6 +299,7 @@
         ><img src="../pictures/twitter.png" alt="twitter ikonica" width="35px"
       /></a>
     </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -315,6 +314,7 @@
         navE1.classList.add("navbar-scrolled2");
       });
     </script>
+
     <script src="../scripts/organizer.js"></script>
     <script src="../scripts/login.js"></script>
   </body>

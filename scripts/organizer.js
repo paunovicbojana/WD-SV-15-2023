@@ -11,7 +11,9 @@ function getOrganizer() {
 const firebaseDatabase =
   "https://wd-sv-15-2023-default-rtdb.europe-west1.firebasedatabase.app/";
 const parent = document.getElementById("fest_cont");
-const parent2 = document.getElementById("overlay");
+const parent2 = document.getElementById("hero2");
+const parent3 = document.getElementById("hero-gradient2");
+const parent4 = document.getElementById("body2");
 
 function fetchFestivals() {
   const fest = getFestivals();
@@ -48,8 +50,14 @@ function fetchOrganizer() {
           if (obj === organizator) {
             let logo = data[obj]["logo"];
             let naziv = data[obj]["naziv"];
-            let innerHTML = `<div class="hero" style="background-image: url('${logo}'); filter: blur(10px); position:relative"></div><div class="hero-gradient"><h1 style="font-family:Akaya Telivigala;">${naziv}</h1></div>`;
-            parent2.innerHTML = innerHTML;
+            let naslov = document.createElement("h1");
+            naslov.style.fontFamily = "Akaya Telivigala";
+            naslov.innerHTML = naziv;
+            //innerHTML = `<h1 style="font-family:Akaya Telivigala;">${naziv}</h1>`;
+            parent2.style.cssText = `background-image: url('${logo}');`;
+
+            parent3.appendChild(naslov);
+            //parent2.innerHTML = innerHTML;
           }
         }
       } else {
@@ -96,7 +104,7 @@ function createCard(festival_id, festival_data) {
       <p><strong>Cena: </strong>${festival_data["cena"]} dinara<br>
         <strong>Prevoz:</strong> ${festival_data["prevoz"]}<br>
         <strong>Tip festivala:</strong> ${festival_data["tip"]}<br>
-        <a href="#" class="rm">Pročitajte više...</a></p>
+        <a href="./festivals/festival.html?festival=${festival_id}" class="rm">Pročitajte više...</a></p>
     </div>
   `;
   card.innerHTML = innerHTML;

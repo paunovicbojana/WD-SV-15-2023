@@ -8,6 +8,9 @@ const registrationForm1 = document.querySelector(".registration1");
 const registerLink = document.querySelector(".register-link");
 const loginForm = document.querySelector(".login");
 const login = document.getElementById("prijava");
+const heroGrad = document.querySelector(".hero-gradient");
+const hero = document.querySelector(".hero");
+const overlay = document.querySelector(".overlay");
 
 let dugmadZaGasenje = document.getElementsByClassName("icon-close");
 for (let dugmeZaGasenje of dugmadZaGasenje) {
