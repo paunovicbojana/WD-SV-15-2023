@@ -70,7 +70,6 @@ function fetchOrganizer() {
               text-align: center;
               padding: 2%;
               margin-inline: 10%;
-              margin-top: 2%;
               margin-bottom: 2%;
               text-shadow: #3d3028 1px 1px;">
                 <h1 style="font-family: Akaya Telivigala">O nama</h1>
