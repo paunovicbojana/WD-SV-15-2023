@@ -68,11 +68,12 @@ function create(fest) {
   color: #ffffff;
   text-align: center;
   padding-bottom: 2%;
-  text-shadow: #3d3028 1px 1px;"><br>
+  padding-top: 2%;
+  text-shadow: #3d3028 1px 1px;">
       <strong>Cena: </strong>${fest["cena"]} dinara<br>
         <strong>Prevoz:</strong> ${fest["prevoz"]}<br>
         <strong>Maksimalan broj osoba: </strong>${fest["maxOsoba"]}<br>
-        <strong>Tip festivala:</strong> ${fest["tip"]}</div>
+        <strong>Tip festivala:</strong> ${fest["tip"]}<br></div>
     </div>
   `;
   parent.innerHTML = innerHTML;

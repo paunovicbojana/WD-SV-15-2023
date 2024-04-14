@@ -52,13 +52,38 @@ function fetchOrganizer() {
             let logo = data[obj]["logo"];
             let naziv = data[obj]["naziv"];
             let naslov = document.createElement("h1");
+            let adresa = data[obj]["adresa"];
+            let email = data[obj]["email"];
+            let godinaOsnivanja = data[obj]["godinaOsnivanja"];
+            let kontaktTelefon = data[obj]["kontaktTelefon"];
             naslov.style.fontFamily = "Akaya Telivigala";
             naslov.innerHTML = naziv;
-            //innerHTML = `<h1 style="font-family:Akaya Telivigala;">${naziv}</h1>`;
             parent2.style.cssText = `background-image: url('${logo}');`;
-
             parent3.appendChild(naslov);
-            //parent2.innerHTML = innerHTML;
+
+            let oNama = document.createElement("div");
+            oNama.classList.add("oNama");
+            let innerHTML1 = `
+              <div class="oN" style="border-radius: 20px;
+              font-size: 1.2em;
+              color: #ffffff;
+              text-align: center;
+              padding: 2%;
+              margin-inline: 10%;
+              margin-top: 2%;
+              margin-bottom: 2%;
+              text-shadow: #3d3028 1px 1px;">
+                <h1 style="font-family: Akaya Telivigala">O nama</h1>
+                <p><strong>Adresa:</strong> ${adresa}<br>
+                <strong>E-mail:</strong> ${email}<br>
+                <strong>Godina osnivanja:</strong> ${godinaOsnivanja}<br>
+                <strong>Kontakt telefon:</strong> ${kontaktTelefon}<br>
+                </p><div>
+              `;
+            oNama.innerHTML = innerHTML1;
+            let org = document.getElementById("org1");
+            let c2 = document.getElementById("c2");
+            org.insertBefore(oNama, c2);
           }
         }
       } else {
