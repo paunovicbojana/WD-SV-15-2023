@@ -18,6 +18,11 @@
   background-image: url("pictures/jade-masri-74tlEYKgrBE-unsplash.jpg");
 }
 
+#hero3 {
+  background: linear-gradient(30deg, #d6c8ab, #5e652a);
+  max-height: 200vh;
+}
+
 .hero-gradient h1 {
   font-size: 3em;
   color: #ffffff;
@@ -34,7 +39,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+  background-image: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,7 +135,6 @@ a.dropdown-item {
 }
 
 .org1 {
-  min-height: 209vh;
   background: linear-gradient(30deg, #d6c8ab, #5e652a);
 }
 .org1 h3 {
@@ -147,6 +151,12 @@ a.dropdown-item {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 10rem;
+}
+.org1 .wrapper.active {
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .cards {
@@ -309,6 +319,26 @@ footer img {
   flex-wrap: wrap;
 }
 
+.festival {
+  padding-inline: 10%;
+  padding-bottom: 10%;
+}
+.festival h2 {
+  font-size: 2em;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 2%;
+  font-family: "Akaya Telivigala", sans-serif;
+}
+.festival p {
+  font-size: 1.2em;
+  color: #ffffff;
+  text-align: center;
+  padding-bottom: 2%;
+  text-shadow: #3d3028 1px 1px;
+}
+
 .content {
   margin: 20px;
   padding: 20px;
@@ -373,6 +403,9 @@ footer img {
 
 .crop-container {
   height: 220px;
+}
+#crop {
+  height: 80vh;
 }
 
 .title-container {

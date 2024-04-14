@@ -15,8 +15,9 @@ const parent2 = document.getElementById("hero2");
 const parent3 = document.getElementById("hero-gradient2");
 const parent4 = document.getElementById("body2");
 
+const fest = getFestivals();
+
 function fetchFestivals() {
-  const fest = getFestivals();
   const xhttp = new XMLHttpRequest();
 
   xhttp.onreadystatechange = function () {
@@ -104,7 +105,7 @@ function createCard(festival_id, festival_data) {
       <p><strong>Cena: </strong>${festival_data["cena"]} dinara<br>
         <strong>Prevoz:</strong> ${festival_data["prevoz"]}<br>
         <strong>Tip festivala:</strong> ${festival_data["tip"]}<br>
-        <a href="./festivals/festival.html?festival=${festival_id}" class="rm">Pročitajte više...</a></p>
+        <a href="./festival.html?festivals=${fest}&festival=${festival_id}" class="rm">Pročitajte više...</a></p>
     </div>
   `;
   card.innerHTML = innerHTML;
