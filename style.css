@@ -216,9 +216,14 @@ a.dropdown-item {
   top: 25px;
   width: 250px;
   height: 160px;
-  background: #5e652a;
   border-radius: 20px;
   transition: 0.5s;
+}
+.cards img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .cards:hover .imgbx {
   transform: translateY(-15px);
@@ -391,16 +396,6 @@ footer img {
 }
 .cards2:hover {
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
-}
-
-.cards2 .imgbx {
-  position: absolute;
-  top: 100px;
-  border-radius: 20px;
-  transition: 0.5s;
-}
-.cards2:hover .imgbx {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
 .cards2 .cont {

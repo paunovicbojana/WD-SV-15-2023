@@ -99,7 +99,7 @@ function createCard(festival_id, festival_data) {
   let card = document.createElement("div");
   card.classList.add("cards2");
   let innerHTML = `
-    <div id="${festival_id}" class="carousel slide" data-bs-ride="carousel">
+    <div id="${festival_id}" class="carousel slide w-100" data-bs-ride="carousel">
       <div class="carousel-inner">
   `;
   for (let i = 0; i < festival_data["slike"].length; i++) {
@@ -108,7 +108,7 @@ function createCard(festival_id, festival_data) {
     innerHTML += `
       <div class="carousel-item ${active}">
         <div class="crop-container">
-          <img src="${slika}" class="d-block w-100" alt="${festival_data["naziv"]} logo" style="object-fit: contain; object-position: center center; height:100%">
+          <img src="${slika}" class="d-block w-100" alt="${festival_data["naziv"]} logo" style="object-fit: cover; object-position: center center; height:250px;border-radius:20px;">
         </div>
       </div>
     `;
