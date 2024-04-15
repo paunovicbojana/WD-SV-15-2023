@@ -371,7 +371,6 @@ footer img {
 
 .content {
   margin: 20px;
-  padding: 20px;
 }
 
 .cards2 {
@@ -637,6 +636,21 @@ footer img {
   border: none;
   background: transparent;
   cursor: pointer;
+}
+.content {
+  color: #3d3028;
+  padding-bottom: 10%;
+}
+.table {
+  background: #5e652a;
+  color: #ffffff !important;
+  font-weight: bold;
+  text-shadow: #3d3028 1px 1px;
+  font-size: 1.1em;
+  text-align: center;
+}
+.table img {
+  align-items: center;
 }
 @media (max-width: 1000px) {
   .navbar-brand {
