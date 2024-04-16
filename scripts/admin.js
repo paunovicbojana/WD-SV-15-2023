@@ -1,7 +1,8 @@
 const firebaseDatabase =
   "https://wd-sv-15-2023-default-rtdb.europe-west1.firebasedatabase.app";
 
-let parent = document.getElementById("content");
+let tableKor = document.getElementById("tableKor");
+let tableOrg = document.getElementById("tableOrg");
 
 const xhttp = new XMLHttpRequest();
 
@@ -18,7 +19,7 @@ xhttp.onreadystatechange = function () {
 
 xhttp.open("GET", firebaseDatabase + "/organizatoriFestivala.json");
 xhttp.send();
-/*
+
 const xhttp2 = new XMLHttpRequest();
 
 xhttp2.onreadystatechange = function () {
@@ -33,14 +34,11 @@ xhttp2.onreadystatechange = function () {
 };
 
 xhttp2.open("GET", firebaseDatabase + "/korisnici.json");
-xhttp2.send();*/
+xhttp2.send();
 
 function createOrg(data) {
-  let innerHTML = `<table class="table caption-top">
-  <caption style="color: #3d3028 !important;
-  text-shadow:none !important;
-  font-size: 1.3em;
-  text-align: center;">Prikaz organizatora</caption>
+  let innerHTML = `
+  
   <thead>
     <tr>
       <th scope="col">Logo</th>
@@ -70,7 +68,69 @@ function createOrg(data) {
   }
   innerHTML += `
     </tbody>
-    </table>`;
-  console.log(innerHTML);
-  parent.innerHTML = innerHTML;
+    `;
+  tableOrg.innerHTML = innerHTML;
+}
+
+function createFest(data) {
+  let innerHTML = `
+  <thead>
+    <tr>
+      <th scope="col">Ime</th>
+      <th scope="col">Prezime</th>
+      <th scope="col">Korisničko ime</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Lozinka</th>
+      <th scope="col">Datum rođenja</th>
+      <th scope="col">Adresa</th>
+      <th scope="col">Telefon</th>
+      <th scope="col">Zanimanje</th>
+    </tr>
+  </thead>
+  <tbody>`;
+  for (let obj in data) {
+    let value = data[obj];
+    innerHTML += `
+    <tr>
+      <td>${value["ime"]}</td>
+      <td>${value["prezime"]}</td>
+      <td>${value["korisnickoIme"]}</td>
+      <td>${value["email"]}</td>
+      <td>${value["lozinka"]}</td>
+      <td>${value["datumRodjenja"]}</td>
+      <td>${value["adresa"]}</td>
+      <td>${value["telefon"]}</td>
+      <td>${value["zanimanje"]}</td>
+      <td>
+        <button class="btn btn-success" style="display: inline-block">Izmeni</button>
+        <button class="btn btn-danger" style="display: inline-block">Obriši</button>
+    </td>
+    </tr>
+    `;
+  }
+  innerHTML += `
+    </tbody>
+    `;
+  tableKor.innerHTML = innerHTML;
+}
+
+function switchTables() {
+  let btnOrg = document.querySelector(".btn-org");
+  let btnKor = document.querySelector(".btn-k");
+  let tableOrg = document.querySelector(".tableOrg");
+  let tableKor = document.querySelector(".tableKor");
+
+  btnOrg.addEventListener("click", () => {
+    tableKor.classList.remove("active");
+    tableOrg.classList.add("active");
+    btnOrg.classList.add("active");
+    btnKor.classList.remove("active");
+  });
+
+  btnKor.addEventListener("click", () => {
+    tableOrg.classList.remove("active");
+    tableKor.classList.add("active");
+    btnKor.classList.add("active");
+    btnOrg.classList.remove("active");
+  });
 }

@@ -56,7 +56,7 @@
               <div class="text-box">
                 <p class="login-register">
                   Nemate nalog?
-                  <a href="#" class="register-link">Registrujte se</a>
+                  <button class="register-link">Registrujte se</button>
                 </p>
               </div>
             </form>
@@ -85,7 +85,7 @@
               <div class="text-box">
                 <p class="login-register">
                   Imate nalog?
-                  <a href="#" class="login-link">Prijavite se</a>
+                  <button class="login-link">Prijavite se</button>
                 </p>
               </div>
             </form>
@@ -137,7 +137,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
           <div class="container-fluid">
-            <a class="navbar-brand" id="logo" href="#"
+            <a class="navbar-brand" id="logo" href="../main_page.html"
               ><img
                 src="../pictures/festilink-high-resolution-logo-transparent.png"
                 width="230px"
@@ -228,7 +228,22 @@
         ></path>
       </svg>
     </div>
-    <div class="content" id="content"></div>
+    <div class="content" id="content">
+      <div class="switch">
+        <button class="btn-org active" id="btn-org" onclick="switchTables()">
+          Organizatori
+        </button>
+        <button class="btn-k" id="btn-k" onclick="switchTables()">
+          Korisnici
+        </button>
+        <button class="btn-add" id="btn-add">Dodaj</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table tableOrg active" id="tableOrg"></table>
+        <table class="table tableKor" id="tableKor"></table>
+      </div>
+    </div>
     <div class="footer">
       <div class="custom-shape-divider-bottom-1711913753" id="c1">
         <svg
@@ -294,5 +309,6 @@
 
     <script src="../scripts/admin.js"></script>
     <script src="../scripts/login.js"></script>
+    <script src="../scripts/tables.js"></script>
   </body>
 </html>
