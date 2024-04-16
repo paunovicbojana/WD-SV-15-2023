@@ -165,7 +165,7 @@ a.dropdown-item {
 }
 
 .org1 {
-  background: linear-gradient(30deg, #d6c8ab, #5e652a);
+  background: linear-gradient(150deg, #d6c8ab, #5e652a);
 }
 .org1 h3 {
   font-size: 1.8em;
@@ -339,10 +339,6 @@ footer img {
   margin-top: 5%;
 }
 
-.body2 {
-  background: linear-gradient(30deg, #d6c8ab, #5e652a);
-}
-
 .fest_cont {
   max-height: 500vh;
   padding-bottom: 20vh;
@@ -365,6 +361,7 @@ footer img {
   font-weight: bold;
   padding-bottom: 2%;
   font-family: "Akaya Telivigala", sans-serif;
+  text-shadow: #3d3028 1px 1px;
 }
 .festival p {
   font-size: 1.2em;

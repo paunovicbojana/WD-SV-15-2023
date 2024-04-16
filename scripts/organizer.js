@@ -70,7 +70,8 @@ function fetchOrganizer() {
               padding: 2%;
               margin-inline: 10%;
               margin-bottom: 2%;
-              text-shadow: #3d3028 1px 1px;">
+              text-shadow: #3d3028 1px 1px;
+              background-color: #5e652a;">
                 <h1 style="font-family: Akaya Telivigala">O nama</h1>
                 <p><strong>Adresa:</strong> ${adresa}<br>
                 <strong>E-mail:</strong> ${email}<br>
