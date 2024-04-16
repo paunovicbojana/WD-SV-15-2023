@@ -4,6 +4,7 @@ const registrationForm3 = document.querySelector(".registration3");
 const loginLink = document.querySelector(".login-link");
 const nextLink1 = document.getElementById("reg1");
 const nextLink2 = document.getElementById("reg2");
+const register = document.getElementById("reg3");
 const registrationForm1 = document.querySelector(".registration1");
 const registerLink = document.querySelector(".register-link");
 const loginForm = document.querySelector(".login");
@@ -25,27 +26,39 @@ login.addEventListener("click", () => {
   wrapper.classList.add("active");
   loginForm.classList.add("active");
   login.disabled = true;
+  event.preventDefault();
 });
 
 registerLink.addEventListener("click", () => {
   registrationForm1.classList.add("active");
   loginForm.classList.remove("active");
+  event.preventDefault();
 });
 
 loginLink.addEventListener("click", () => {
   loginForm.classList.add("active");
   registrationForm1.classList.remove("active");
+  event.preventDefault();
 });
 
 nextLink1.addEventListener("click", () => {
   registrationForm1.classList.remove("active");
   registrationForm2.classList.add("active");
+  event.preventDefault();
 });
 nextLink2.addEventListener("click", () => {
   registrationForm2.classList.remove("active");
   registrationForm3.classList.add("active");
+  event.preventDefault();
 });
-
+register.addEventListener("click", () => {
+  registrationForm3.classList.remove("active");
+  wrapper.classList.remove("active");
+  loginForm.classList.add("active");
+  login.disabled = false;
+  event.preventDefault();
+  toggleOverlay();
+});
 function scrollToTop() {
   window.scrollTo({
     top: 0,

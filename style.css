@@ -541,15 +541,6 @@ footer img {
   font-size: 0.9em;
   color: #ffffff;
 }
-.login-register a {
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-}
-.login-register a:hover {
-  color: #5e652a;
-  text-decoration: underline;
-}
 
 .wrapper.active .icon-close {
   position: absolute;
@@ -641,12 +632,36 @@ footer img {
   color: #ffffff !important;
   font-weight: bold;
   text-shadow: #3d3028 1px 1px;
-  font-size: 1.1em;
+  font-size: 1em;
   text-align: center;
+  padding-top: 50px;
 }
 .table img {
   align-items: center;
 }
+.register-link {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+}
+.login-link {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+}
+.register-link:hover {
+  color: #5e652a;
+  text-decoration: underline;
+}
+.login-link:hover {
+  color: #5e652a;
+  text-decoration: underline;
+}
+
 @media (max-width: 1000px) {
   .navbar-brand {
     width: 72%;

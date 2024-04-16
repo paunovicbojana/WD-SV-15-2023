@@ -28,7 +28,10 @@ xhttp.onreadystatechange = function () {
   }
 };
 
-xhttp.open("GET", firebaseDatabase + "/" + sviFest + "/" + fest + ".json");
+xhttp.open(
+  "GET",
+  firebaseDatabase + "/festivali/" + sviFest + "/" + fest + ".json"
+);
 xhttp.send();
 
 function create(fest) {

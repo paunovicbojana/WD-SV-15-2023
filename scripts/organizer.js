@@ -28,14 +28,13 @@ function fetchFestivals() {
           let festival = data[obj];
           createCard(obj, festival);
         }
-        parent.lastElementChild.id = "c3";
       } else {
         console.log("Error fetching festivals:", this.status);
       }
     }
   };
 
-  xhttp.open("GET", firebaseDatabase + fest + ".json");
+  xhttp.open("GET", firebaseDatabase + "festivali/" + fest + ".json");
   xhttp.send();
 }
 
