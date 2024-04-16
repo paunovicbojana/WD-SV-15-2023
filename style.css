@@ -554,24 +554,7 @@ footer img {
   z-index: 1;
 }
 
-.wrapper.active .login.icon-close {
-  position: absolute;
-  right: 15px;
-  width: 45px;
-  height: 45px;
-  font-size: 1.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: #474c1d;
-  z-index: 1;
-  margin-top: -10px;
-}
-
 .wrapper.active .form-box.login {
-  /*transition: transform 0.18s ease;
-  transform: translateX(0);*/
   position: absolute;
   transition: none;
   transform: translateX(-400px);
@@ -625,23 +608,12 @@ footer img {
   color: #3d3028;
   padding-bottom: 10%;
 }
-.tableKor {
-  display: none;
-}
+.tableKor,
 .tableOrg {
   display: none;
 }
-.tableKor.active {
-  display: table;
-  background: #5e652a;
-  color: #ffffff !important;
-  font-weight: bold;
-  text-shadow: #3d3028 1px 1px;
-  font-size: 1em;
-  text-align: center;
-  padding-top: 50px;
-  margin: 0;
-}
+
+.tableKor.active,
 .tableOrg.active {
   display: table;
   background: #5e652a;
