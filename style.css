@@ -459,7 +459,7 @@ footer img {
 }
 .wrapper.active .form-box.registration1.active {
   transition: none;
-  transform: translateX(400px);
+  transform: translateX(-400px);
 }
 .wrapper.active .form-box.registration2.active {
   transition: none;

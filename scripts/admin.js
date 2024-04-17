@@ -102,7 +102,7 @@ function createFest(data) {
       <td>${value["telefon"]}</td>
       <td>${value["zanimanje"]}</td>
       <td>
-        <button class="btn btn-success" style="display: inline-block">Izmeni</button>
+        <button class="btn btn-success" style="display: inline-block" onclick="changeData()">Izmeni</button>
         <button class="btn btn-danger" style="display: inline-block">Obriši</button>
     </td>
     </tr>
