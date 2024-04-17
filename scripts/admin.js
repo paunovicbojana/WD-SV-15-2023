@@ -26,7 +26,7 @@ xhttp2.onreadystatechange = function () {
   if (this.readyState == 4) {
     if (this.status == 200) {
       let data = JSON.parse(this.responseText);
-      createFest(data);
+      createUser(data);
     } else {
       console.log("Error:", this.status);
     }
@@ -60,8 +60,8 @@ function createOrg(data) {
       <td>${value["kontaktTelefon"]}</td>
       <td>${value["godinaOsnivanja"]}</td>
       <td>
-        <button class="btn btn-success" style="display: inline-block">Izmeni</button>
-        <button class="btn btn-danger" style="display: inline-block">Obriši</button>
+        <button class="btn btn-success btnIzmeniOrg" style="display: inline-block" onclick="scrollToTopUser(), toggleOverlayUser()">Izmeni</button>
+        <button class="btn btn-danger btnObrisiOrg" style="display: inline-block">Obriši</button>
     </td>
     </tr>
     `;
@@ -72,7 +72,7 @@ function createOrg(data) {
   tableOrg.innerHTML = innerHTML;
 }
 
-function createFest(data) {
+function createUser(data) {
   let innerHTML = `
   <thead>
     <tr>
@@ -102,8 +102,8 @@ function createFest(data) {
       <td>${value["telefon"]}</td>
       <td>${value["zanimanje"]}</td>
       <td>
-        <button class="btn btn-success" style="display: inline-block" onclick="changeData()">Izmeni</button>
-        <button class="btn btn-danger" style="display: inline-block">Obriši</button>
+        <button class="btn btn-success btnIzmeniK" id="izmena-kor" style="display: inline-block" onclick="scrollToTopUser(), toggleOverlayUser()">Izmeni</button>
+        <button class="btn btn-danger btnObrisiK" style="display: inline-block">Obriši</button>
     </td>
     </tr>
     `;

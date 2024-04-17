@@ -9,6 +9,7 @@ const registrationForm1 = document.querySelector(".registration1");
 const registerLink = document.querySelector(".register-link");
 const loginForm = document.querySelector(".login");
 const login = document.getElementById("prijava");
+const loginBtn = document.getElementById("login-btn");
 
 let dugmadZaGasenje = document.getElementsByClassName("icon-close");
 for (let dugmeZaGasenje of dugmadZaGasenje) {
@@ -21,6 +22,10 @@ for (let dugmeZaGasenje of dugmadZaGasenje) {
     login.disabled = false;
   });
 }
+
+loginBtn.addEventListener("click", () => {
+  event.preventDefault();
+});
 
 login.addEventListener("click", () => {
   wrapper.classList.add("active");

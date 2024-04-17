@@ -434,7 +434,8 @@ footer img {
   padding: 10%;
 }
 
-.wrapper.active {
+.wrapper.active,
+.change-data-wrapper-user.active {
   width: 400px;
   height: 400px;
   background: transparent;
@@ -450,27 +451,32 @@ footer img {
   z-index: 99999;
 }
 
-.wrapper {
+.wrapper,
+.change-data-wrapper-user {
   display: none;
 }
 .wrapper .form-box.login {
   transition: none;
   transform: translateX(-400px);
 }
-.wrapper.active .form-box.registration1.active {
+.wrapper.active .form-box.registration1.active,
+.change-data-wrapper-user.active .form-box.changeData.active1 {
   transition: none;
   transform: translateX(-400px);
 }
-.wrapper.active .form-box.registration2.active {
+.wrapper.active .form-box.registration2.active,
+.change-data-wrapper-user.active .form-box.changeData2.active {
   transition: none;
   transform: translateX(400px);
 }
-.wrapper.active .form-box.registration3.active {
+.wrapper.active .form-box.registration3.active,
+.change-data-wrapper-user.active .form-box.changeData3.active {
   transition: none;
   transform: translateX(400px);
 }
 
-.wrapper.active .form-box {
+.wrapper.active .form-box,
+.change-data-wrapper-user.active .form-box {
   width: 100%;
   padding: 40px;
   padding-bottom: 20px;
@@ -484,13 +490,16 @@ footer img {
 }
 
 .wrapper.active .form-box.registration2,
-.wrapper.active .form-box.registration3 {
+.wrapper.active .form-box.registration3,
+.change-data-wrapper-user.active .form-box.changeData2,
+.change-data-wrapper-user.active .form-box.changeData3 {
   width: 100%;
   padding: 40px;
   padding-top: 70px;
 }
 
-.wrapper.active .form-box h2 {
+.wrapper.active .form-box h2,
+.change-data-wrapper-user.active .form-box h2 {
   color: #ffffff;
   font-size: 2em;
   font-weight: bold;
@@ -539,7 +548,8 @@ footer img {
   color: #ffffff;
 }
 
-.wrapper.active .icon-close {
+.wrapper.active .icon-close,
+.change-data-wrapper-user.active .icon-close {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -559,17 +569,20 @@ footer img {
   transition: none;
   transform: translateX(-400px);
 }
-.wrapper.active .form-box.registration1 {
+.wrapper.active .form-box.registration1,
+.change-data-wrapper-user.active .form-box.changeData1 {
   position: absolute;
   transition: none;
   transform: translateX(400px);
 }
-.wrapper.active .form-box.registration2 {
+.wrapper.active .form-box.registration2,
+.change-data-wrapper-user.active .form-box.changeData2 {
   position: absolute;
   transition: none;
   transform: translateX(400px);
 }
-.wrapper.active .form-box.registration3 {
+.wrapper.active .form-box.registration3,
+.change-data-wrapper-user.active .form-box.changeData3 {
   position: absolute;
   transition: none;
   transform: translateX(400px);
@@ -580,16 +593,19 @@ footer img {
   transform: translateX(0);
 }
 
-.wrapper.active .form-box.registration1.active {
+.wrapper.active .form-box.registration1.active,
+.change-data-wrapper-user.active .form-box.changeData1.active {
   transition: transform 0.18s ease;
   transform: translateX(0);
 }
 
-.wrapper.active .form-box.registration2.active {
+.wrapper.active .form-box.registration2.active,
+.change-data-wrapper-user.active .form-box.changeData2.active {
   transition: transform 0.18s ease;
   transform: translateX(0);
 }
-.wrapper.active .form-box.registration3.active {
+.wrapper.active .form-box.registration3.active,
+.change-data-wrapper-user.active .form-box.changeData3.active {
   transition: transform 0.18s ease;
   transform: translateX(0);
 }
