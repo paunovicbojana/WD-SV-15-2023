@@ -73,7 +73,6 @@ function fetchFestivals2(id) {
         let data = JSON.parse(this.responseText);
         for (let obj in data) {
           if (obj === id) {
-            console.log(data[obj]["festivali"]);
             fetchFestivals3(data[obj]["festivali"]);
           }
         }
@@ -113,6 +112,7 @@ function createOrg(data) {
       <th scope="col">Naziv</th>
       <th scope="col">Adresa</th>
       <th scope="col">Kontakt telefon</th>
+      <th scope="col">E-mail</th>
       <th scope="col">Godina osnivanja</th>
       <th scope="col">Festivali</th>
       <th scope="col">Radnje</th>
@@ -128,10 +128,11 @@ function createOrg(data) {
         <td>${value["naziv"]}</td>
         <td>${value["adresa"]}</td>
         <td>${value["kontaktTelefon"]}</td>
+        <td>${value["email"]}</td>
         <td>${value["godinaOsnivanja"]}</td>
         <td><button class="btn-fest" id="${obj}" data-festivalsID="${value["festivali"]}">${count} festivala</button></td>
         <td>
-          <button class="btn btn-success btnIzmeniOrg" style="display: inline-block" >Izmeni</button>
+          <button class="btn btn-success btnIzmeniOrg" style="display: inline-block" onclick="scrollToTop(), toggleOverlayOrg()">Izmeni</button>
           <button class="btn btn-danger btnObrisiOrg" style="display: inline-block">Obriši</button>
       </td>
       </tr>
@@ -181,7 +182,7 @@ function createUser(data) {
       <td>${value["telefon"]}</td>
       <td>${value["zanimanje"]}</td>
       <td>
-        <button class="btn btn-success btnIzmeniK" id="izmena-kor" style="display: inline-block" onclick="scrollToTopUser(), toggleOverlayUser()">Izmeni</button>
+        <button class="btn btn-success btnIzmeniK" id="izmena-kor" style="display: inline-block" onclick="scrollToTop(), toggleOverlayUser()">Izmeni</button>
         <button class="btn btn-danger btnObrisiK" style="display: inline-block">Obriši</button>
     </td>
     </tr>
@@ -194,7 +195,6 @@ function createUser(data) {
 }
 
 function createFest(festivals) {
-  console.log(festivals);
   let innerHTML = `<thead>
             <tr>
               <th scope="col">Slike</th>
@@ -245,8 +245,8 @@ function createFest(festivals) {
       <td>${value["maxOsoba"]}</td>
       <td>${value["tip"]}</td>
       <td>
-        <button class="btn btn-success btnIzmeniK" id="izmena-kor" style="display: inline-block" >Izmeni</button>
-        <button class="btn btn-danger btnObrisiK" style="display: inline-block">Obriši</button>
+        <button class="btn btn-success btnIzmeniF" id="izmena-kor" style="display: inline-block" onclick="scrollToTop(), toggleOverlayFest()">Izmeni</button>
+        <button class="btn btn-danger btnObrisiF" style="display: inline-block">Obriši</button>
       </td>
     </tr>
     `;
