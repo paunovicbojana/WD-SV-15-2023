@@ -298,16 +298,13 @@
     </div>
     <div class="content" id="content">
       <div class="switch">
-        <button class="btn-org active" id="btn-org" onclick="switchTables()">
-          Organizatori
-        </button>
-        <button class="btn-k" id="btn-k" onclick="switchTables()">
-          Korisnici
-        </button>
-        <button class="btn-add" id="btn-add">Dodaj</button>
+        <button class="btn-org active">Organizatori</button>
+        <button class="btn-k">Korisnici</button>
+        <button class="btn-add">Dodaj</button>
       </div>
 
       <div class="table-responsive">
+        <table class="table tableFest" id="tableFest"></table>
         <table class="table tableOrg active" id="tableOrg"></table>
         <table class="table tableKor" id="tableKor"></table>
       </div>

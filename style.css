@@ -625,12 +625,14 @@ footer img {
   padding-bottom: 10%;
 }
 .tableKor,
-.tableOrg {
+.tableOrg,
+.tableFest {
   display: none;
 }
 
 .tableKor.active,
-.tableOrg.active {
+.tableOrg.active,
+.tableFest.active {
   display: table;
   background: #5e652a;
   color: #ffffff !important;
@@ -639,7 +641,7 @@ footer img {
   font-size: 1em;
   text-align: center;
   padding-top: 50px;
-  margin: 0;
+  margin: 0 !important;
 }
 
 .table img {
@@ -681,17 +683,22 @@ footer img {
 }
 
 .register-link,
-.login-link {
+.login-link,
+.btn-fest {
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
   border: none;
   background: transparent;
+  text-shadow: #3d3028 1px 1px;
 }
 
 .register-link:hover,
 .login-link:hover {
   color: #5e652a;
+  text-decoration: underline;
+}
+.btn-fest:hover {
   text-decoration: underline;
 }
 
