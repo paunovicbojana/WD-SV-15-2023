@@ -303,6 +303,57 @@
           </div>
         </div>
 
+        <div class="input-wrapper-fest">
+          <div class="form-box input1f active">
+            <span class="icon-close"
+              ><ion-icon name="close" onclick="toggleOverlayFestI()"></ion-icon
+            ></span>
+            <h2>Unesite podatke o festivalu 1/2</h2>
+            <form action="#">
+              <div class="input-box">
+                <input type="text" placeholder="Naziv" />
+              </div>
+              <div class="input-box">
+                <input type="number" placeholder="Cena" />
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Opis" />
+              </div>
+              <div class="button-box">
+                <button type="submit" class="btn1" class="next-link1" id="i1f">
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="form-box input2f">
+            <span class="icon-close"
+              ><ion-icon name="close" onclick="toggleOverlayFestI()"></ion-icon
+            ></span>
+            <h2>Unesite podatke o festivalu 2/2</h2>
+            <form action="#">
+              <div class="input-box">
+                <input type="text" placeholder="Prevoz" />
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Max osoba" />
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Tip" />
+              </div>
+              <div class="input-box">
+                <input type="text" placeholder="Slike - linkovi" />
+              </div>
+              <div class="button-box">
+                <button type="submit" class="btn1" class="next-link2" id="i2f">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
           <div class="container-fluid">
             <a class="navbar-brand" id="logo" href="../main_page.html"
@@ -400,7 +451,7 @@
       <div class="switch">
         <button class="btn-org active">Organizatori</button>
         <button class="btn-k">Korisnici</button>
-        <button class="btn-add">Dodaj</button>
+        <button class="btn-add" onclick="scrollToTop(), toggleOverlayFestI()">Dodaj</button>
       </div>
 
       <div class="table-responsive">

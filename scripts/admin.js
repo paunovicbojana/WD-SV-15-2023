@@ -6,6 +6,7 @@ let tableOrg = document.getElementById("tableOrg");
 let tableFest = document.getElementById("tableFest");
 let btnOrg = document.querySelector(".btn-org");
 let btnKor = document.querySelector(".btn-k");
+let btnAdd = document.querySelector(".btn-add")
 
 const xhttp = new XMLHttpRequest();
 
@@ -146,6 +147,7 @@ function createOrg(data) {
           tableKor.classList.remove("active");
           let id = event.target.getAttribute("data-festivalsID");
           fetchFestivals3(id);
+          btnAdd.classList.add("active");
         });
       }
     });
@@ -264,6 +266,7 @@ btnOrg.addEventListener("click", (event) => {
 
   btnOrg.classList.add("active");
   btnKor.classList.remove("active");
+  btnAdd.classList.remove("active");
 });
 
 btnKor.addEventListener("click", (event) => {
@@ -272,4 +275,5 @@ btnKor.addEventListener("click", (event) => {
   tableOrg.classList.remove("active");
   btnKor.classList.add("active");
   btnOrg.classList.remove("active");
+  btnAdd.classList.remove("active");
 });

@@ -20,6 +20,11 @@ let cd1f = document.getElementById("cd1f");
 let cd2f = document.getElementById("cd2f");
 let changeData1Fest = document.querySelector(".changeData1f");
 let changeData2Fest = document.querySelector(".changeData2f");
+let wrapperFestI = document.querySelector(".input-wrapper-fest")
+let i1f = document.getElementById("i1f");
+let i2f = document.getElementById("i2f");
+let fest1I = document.querySelector(".input1f");
+let fest2I = document.querySelector(".input2f");
 
 
 cd1.addEventListener("click", (event) => {
@@ -90,6 +95,29 @@ cd2f.addEventListener("click", (event) => {
   document.body.style.overflowY = "scroll";
 });
 
+btnAdd.addEventListener("click", (event) => {
+  wrapperFestI.classList.add("active");
+  fest1I.classList.add("active");
+  event.preventDefault();
+});
+
+i1f.addEventListener("click", (event) => {
+  fest1I.classList.remove("active");
+  fest2I.classList.add("active");
+  fest2I.style.height = "500px";
+  wrapperFestI.style.height = "500px";
+  event.preventDefault();
+});
+i2f.addEventListener("click", (event) => {
+  fest2I.classList.remove("active");
+  fest1I.classList.add("active");
+  wrapperFestI.classList.remove("active");
+  fest2I.style.height = "400px";
+  wrapperFestI.style.height = "400px";
+  event.preventDefault();
+  document.body.style.overflowY = "scroll";
+});
+
 function toggleOverlayUser() {
   wrapperUser.classList.toggle("active");
 
@@ -117,6 +145,18 @@ function toggleOverlayFest() {
   wrapperFest.classList.toggle("active");
 
   if (wrapperFest.classList.contains("active")) {
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+  } else {
+    document.body.style.overflow = "";
+    document.body.style.height = "";
+  }
+}
+
+function toggleOverlayFestI() {
+  wrapperFestI.classList.toggle("active");
+
+  if (wrapperFestI.classList.contains("active")) {
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
   } else {

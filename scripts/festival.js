@@ -46,7 +46,7 @@ function create(fest) {
     innerHTML += `
       <div class="carousel-item ${activeAttr}">
         <div class="crop-container" id="crop">
-          <img src="${slika}" class="d-block w-100" alt="${fest["naziv"]} logo" style="object-fit: cover; object-position: center center; width:100%"; height:80vh;>
+          <img src="${slika}" class="d-block w-100" alt="${fest["naziv"]} logo" style="object-fit: cover; object-position: center center; width:100%; height:80vh;">
         </div>
       </div>
     `;

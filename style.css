@@ -447,7 +447,7 @@ footer img {
 
 .wrapper.active,
 .change-data-wrapper-user.active,
-.change-data-wrapper-org.active, .change-data-wrapper-fest.active {
+.change-data-wrapper-org.active, .change-data-wrapper-fest.active, .input-wrapper-fest.active {
   width: 400px;
   height: 400px;
   background: transparent;
@@ -465,7 +465,7 @@ footer img {
 
 .wrapper,
 .change-data-wrapper-user,
-.change-data-wrapper-org, .change-data-wrapper-fest {
+.change-data-wrapper-org, .change-data-wrapper-fest, .input-wrapper-fest {
   display: none;
 }
 .wrapper .form-box.login {
@@ -478,18 +478,18 @@ footer img {
   transform: translateX(-400px);
 }
 .wrapper.active .form-box.registration2.active,
-.change-data-wrapper-user.active .form-box.changeData2o.active, .change-data-wrapper-fest.active .form-box.changeData1f.active {
+.change-data-wrapper-user.active .form-box.changeData2o.active, .change-data-wrapper-fest.active .form-box.changeData1f.active, .input-wrapper-fest.active .form-box.input1f.active {
   transition: none;
   transform: translateX(400px);
 }
 .wrapper.active .form-box.registration3.active,
-.change-data-wrapper-user.active .form-box.changeData3o.active,  .change-data-wrapper-fest.active .form-box.changeData2f.active{
+.change-data-wrapper-user.active .form-box.changeData3o.active,  .change-data-wrapper-fest.active .form-box.changeData2f.active, .input-wrapper-fest.active .form-box.input2f.active{
   transition: none;
   transform: translateX(400px);
 }
 
 .wrapper.active .form-box,
-.change-data-wrapper-user.active .form-box, .change-data-wrapper-org.active .form-box, .change-data-wrapper-fest.active .form-box {
+.change-data-wrapper-user.active .form-box, .change-data-wrapper-org.active .form-box, .change-data-wrapper-fest.active .form-box, .input-wrapper-fest.active .form-box {
   width: 100%;
   padding: 40px;
   padding-bottom: 20px;
@@ -506,7 +506,7 @@ footer img {
 .wrapper.active .form-box.registration3,
 .change-data-wrapper-user.active .form-box.changeData2,
 .change-data-wrapper-user.active .form-box.changeData3,
-.change-data-wrapper-org.active .form-box.changeData2o, .change-data-wrapper-fest.active .form-box.changeData2f{
+.change-data-wrapper-org.active .form-box.changeData2o, .change-data-wrapper-fest.active .form-box.changeData2f, .input-wrapper-fest.active .form-box.input2f{
   width: 100%;
   padding: 40px;
   padding-top: 70px;
@@ -514,7 +514,7 @@ footer img {
 
 .wrapper.active .form-box h2,
 .change-data-wrapper-user.active .form-box h2,
-.change-data-wrapper-org.active .form-box h2, .change-data-wrapper-fest.active .form-box h2 {
+.change-data-wrapper-org.active .form-box h2, .change-data-wrapper-fest.active .form-box h2, .input-wrapper-fest.active .form-box h2{
   color: #ffffff;
   font-size: 2em;
   font-weight: bold;
@@ -565,7 +565,7 @@ footer img {
 
 .wrapper.active .icon-close,
 .change-data-wrapper-user.active .icon-close,
-.change-data-wrapper-org.active .icon-close, .change-data-wrapper-fest.active .icon-close {
+.change-data-wrapper-org.active .icon-close, .change-data-wrapper-fest.active .icon-close, .input-wrapper-fest.active .icon-close{
   position: absolute;
   top: 25px;
   right: 20px;
@@ -589,14 +589,14 @@ footer img {
 }
 .wrapper.active .form-box.registration1,
 .change-data-wrapper-user.active .form-box.changeData1,
-.change-data-wrapper-org.active .form-box.changeData1o, .change-data-wrapper-fest.active .form-box.changeData1f{
+.change-data-wrapper-org.active .form-box.changeData1o, .change-data-wrapper-fest.active .form-box.changeData1f, .input-wrapper-fest.active .form-box.input1f{
   position: absolute;
   transition: none;
   transform: translateX(400px);
 }
 .wrapper.active .form-box.registration2,
 .change-data-wrapper-user.active .form-box.changeData2,
-.change-data-wrapper-org.active .form-box.changeData2o, .change-data-wrapper-fest.active .form-box.changeData2f{
+.change-data-wrapper-org.active .form-box.changeData2o, .change-data-wrapper-fest.active .form-box.changeData2f, .input-wrapper-fest.active .form-box.input2f{
   position: absolute;
   transition: none;
   transform: translateX(400px);
@@ -615,7 +615,7 @@ footer img {
 
 .wrapper.active .form-box.registration1.active,
 .change-data-wrapper-user.active .form-box.changeData1.active,
-.change-data-wrapper-org.active .form-box.changeData1o.active, .change-data-wrapper-fest.active .form-box.changeData1f.active{
+.change-data-wrapper-org.active .form-box.changeData1o.active, .change-data-wrapper-fest.active .form-box.changeData1f.active, .input-wrapper-fest.active .form-box.input1f.active{
   transition: transform 0.18s ease;
   transform: translateX(0);
 }
@@ -627,7 +627,7 @@ footer img {
   transform: translateX(0);
 }
 
-.change-data-wrapper-fest.active .form-box.changeData2f.active {
+.change-data-wrapper-fest.active .form-box.changeData2f.active, .input-wrapper-fest.active .form-box.input2f.active {
   transition: transform 0.18s ease;
   transform: translateX(0);
 }
@@ -675,9 +675,14 @@ footer img {
 .table img {
   align-items: center;
 }
+
+.btn-add{
+  display: none;
+}
+
 .btn-org,
 .btn-k,
-.btn-add {
+.btn-add.active {
   background-color: #474c1d;
   color: #ffffff;
   font-weight: bold;
@@ -685,8 +690,9 @@ footer img {
   padding: 1rem;
   text-shadow: #3d3028 1px 1px;
 }
-.btn-add {
+.btn-add.active {
   padding: 1rem;
+  display: block;
 }
 .btn-org.active,
 .btn-k.active {
@@ -697,7 +703,7 @@ footer img {
   text-shadow: none;
   font-weight: bold !important;
 }
-.btn-add:hover {
+.btn-add.active:hover {
   background-color: #5e652a;
   color: #ffffff;
   text-shadow: none;
@@ -759,5 +765,8 @@ footer img {
   }
   .switch {
     display: table;
+  }
+  .cont {
+    padding-bottom: 20%;
   }
 }
