@@ -3,6 +3,8 @@ const registrationForm2 = document.querySelector(".registration2");
 const registrationForm3 = document.querySelector(".registration3");
 const loginLink = document.querySelector(".login-link");
 const nextLink1 = document.getElementById("reg1");
+const prevLink1 = document.getElementById("back1");
+const prevLink2 = document.getElementById("back2");
 const nextLink2 = document.getElementById("reg2");
 const register = document.getElementById("reg3");
 const registrationForm1 = document.querySelector(".registration1");
@@ -51,11 +53,24 @@ nextLink1.addEventListener("click", () => {
   registrationForm2.classList.add("active");
   event.preventDefault();
 });
+
+prevLink1.addEventListener("click", () => {
+  registrationForm2.classList.remove("active");
+  registrationForm1.classList.add("active");
+  event.preventDefault();
+});
 nextLink2.addEventListener("click", () => {
   registrationForm2.classList.remove("active");
   registrationForm3.classList.add("active");
   event.preventDefault();
 });
+
+prevLink2.addEventListener("click", () => {
+  registrationForm3.classList.remove("active");
+  registrationForm2.classList.add("active");
+  event.preventDefault();
+}
+);
 register.addEventListener("click", () => {
   registrationForm3.classList.remove("active");
   wrapper.classList.remove("active");
@@ -82,5 +97,7 @@ function toggleOverlay() {
     document.body.style.height = "";
   }
 }
+
+
 
 login.addEventListener("click", scrollToTop);

@@ -477,6 +477,7 @@ footer img {
   transition: none;
   transform: translateX(-400px);
 }
+
 .wrapper.active .form-box.registration2.active,
 .change-data-wrapper-user.active .form-box.changeData2o.active, .change-data-wrapper-fest.active .form-box.changeData1f.active, .input-wrapper-fest.active .form-box.input1f.active {
   transition: none;
@@ -746,6 +747,19 @@ footer img {
   text-shadow: #3d3028 1px 1px;
 }
 
+.button-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+#reg2, #reg3, #back1, #back2 {
+  width: 50%;
+}
+
+
+
 @media (max-width: 1000px) {
   .navbar-brand {
     width: 72%;
@@ -770,3 +784,5 @@ footer img {
     padding-bottom: 20%;
   }
 }
+
+

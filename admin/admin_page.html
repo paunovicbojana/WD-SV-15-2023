@@ -108,6 +108,7 @@
                 <input type="date" placeholder="Datum rođenja" />
               </div>
               <div class="button-box">
+                <button type="button" class="btn1" id="back1">Back</button>
                 <button type="submit" class="btn1" class="next-link2" id="reg2">
                   Next
                 </button>
@@ -130,6 +131,7 @@
                 <input type="text" placeholder="Zanimanje" />
               </div>
               <div class="button-box">
+                <button type="button" class="btn1" id="back2">Back</button>
                 <button type="submit" class="btn1" id="reg3">Register</button>
               </div>
             </form>
@@ -144,13 +146,13 @@
             <h2>Izmenite podatke 1/3</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Korisničko ime" />
+                <input id="kor-izm-kor-ime" type="text" placeholder="Korisničko ime" />
               </div>
               <div class="input-box">
-                <input type="password" placeholder="Lozinka" />
+                <input id="kor-izm-lozinka" type="password" placeholder="Lozinka" />
               </div>
               <div class="input-box">
-                <input type="email" placeholder="E-mail adresa" />
+                <input  id="kor-izm-email" type="email" placeholder="E-mail adresa" />
               </div>
               <div class="button-box">
                 <button type="submit" class="btn1" class="next-link1" id="cd1">
@@ -167,13 +169,13 @@
             <h2>Izmenite podatke 2/3</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Ime" />
+                <input id="kor-izm-ime" type="text" placeholder="Ime" />
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Prezime" />
+                <input id="kor-izm-prezime" type="text" placeholder="Prezime" />
               </div>
               <div class="input-box">
-                <input type="date" placeholder="Datum rođenja" />
+                <input id="kor-izm-dat-rodj" type="date" placeholder="Datum rođenja" />
               </div>
               <div class="button-box">
                 <button type="submit" class="btn1" class="next-link2" id="cd2">
@@ -189,16 +191,16 @@
             <h2>Izmenite podatke 3/3</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Adresa" />
+                <input id="kor-izm-adresa" type="text" placeholder="Adresa" />
               </div>
               <div class="input-box">
-                <input type="tel" placeholder="Broj telefona" />
+                <input id="kor-izm-telefon" type="tel" placeholder="Broj telefona" />
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Zanimanje" />
+                <input id="kor-izm-zanimanje" type="text" placeholder="Zanimanje" />
               </div>
               <div class="button-box">
-                <button type="submit" class="btn1" id="cd3">Update</button>
+                <button type="submit" class="btn1" id="cd3"  onclick="if (confirm('Da li ste sigurni da želite da izmenite podatke?')) {return true;} else {return false;}">Update</button>
               </div>
             </form>
           </div>
@@ -212,13 +214,13 @@
             <h2>Izmenite podatke 1/2</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Naziv" />
+                <input type="text" placeholder="Naziv" id="org-naziv" />
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Adresa" />
+                <input type="text" placeholder="Adresa" id="org-adresa"/>
               </div>
               <div class="input-box">
-                <input type="tel" placeholder="Kontakt telefon" />
+                <input type="tel" placeholder="Kontakt telefon" id = "org-kontakt"/>
               </div>
               <div class="button-box">
                 <button type="submit" class="btn1" class="next-link1" id="cd1o">
@@ -235,16 +237,16 @@
             <h2>Izmenite podatke 2/2</h2>
             <form action="#">
               <div class="input-box">
-                <input type="email" placeholder="E-mail" />
+                <input type="email" placeholder="E-mail" id="org-mail"/>
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Godina osnivanja" />
+                <input type="text" placeholder="Godina osnivanja" id="org-godina"/>
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Logo - link" />
+                <input type="text" placeholder="Logo - link" id="org-link" />
               </div>
               <div class="button-box">
-                <button type="submit" class="btn1" class="next-link2" id="cd2o">
+                <button type="submit" class="btn1" class="next-link2" id="cd2o"  onclick="if (confirm('Da li ste sigurni da želite da izmenite podatke?')) {return true;} else {return false;}">
                   Update
                 </button>
               </div>
@@ -260,13 +262,13 @@
             <h2>Izmenite podatke 1/2</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Naziv" />
+                <input type="text" placeholder="Naziv" id="fest-naziv"/>
               </div>
               <div class="input-box">
-                <input type="number" placeholder="Cena" />
+                <input type="number" placeholder="Cena" id="fest-cena"/>
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Opis" />
+                <input type="text" placeholder="Opis" id="fest-opis"/>
               </div>
               <div class="button-box">
                 <button type="submit" class="btn1" class="next-link1" id="cd1f">
@@ -283,16 +285,16 @@
             <h2>Izmenite podatke 2/2</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Prevoz" />
+                <input type="text" placeholder="Prevoz" id="fest-prevoz"/>
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Max osoba" />
+                <input type="text" placeholder="Max osoba" id = "fest-osobe"/>
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Tip" />
+                <input type="text" placeholder="Tip" id="fest-tip" />
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Slike - linkovi" />
+                <input type="text" placeholder="Slike - linkovi" id="fest-slike"/>
               </div>
               <div class="button-box">
                 <button type="submit" class="btn1" class="next-link2" id="cd2f">

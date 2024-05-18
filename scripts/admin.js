@@ -6,7 +6,29 @@ let tableOrg = document.getElementById("tableOrg");
 let tableFest = document.getElementById("tableFest");
 let btnOrg = document.querySelector(".btn-org");
 let btnKor = document.querySelector(".btn-k");
-let btnAdd = document.querySelector(".btn-add")
+let btnAdd = document.querySelector(".btn-add");
+const korIme = document.getElementById("kor-izm-ime");
+const korPrezime = document.getElementById("kor-izm-prezime");
+const korKorIme = document.getElementById("kor-izm-kor-ime");
+const korEmail = document.getElementById("kor-izm-email");
+const korLozinka = document.getElementById("kor-izm-lozinka");
+const korDatRodj = document.getElementById("kor-izm-dat-rodj");
+const korAdresa = document.getElementById("kor-izm-adresa");
+const korTelefon = document.getElementById("kor-izm-telefon");
+const korZanimanje = document.getElementById("kor-izm-zanimanje");
+const orgIme = document.getElementById("org-naziv");
+const orgAdresa = document.getElementById("org-adresa");
+const orgKontaktTelefon = document.getElementById("org-kontakt");
+const orgEmail = document.getElementById("org-mail");
+const orgGodinaOsnivanja = document.getElementById("org-godina");
+const orgLink = document.getElementById("org-link");
+const festIme = document.getElementById("fest-naziv");
+const festCena = document.getElementById("fest-cena");
+const festOpis = document.getElementById("fest-opis");
+const festPrevoz = document.getElementById("fest-prevoz");
+const festMaxOsoba = document.getElementById("fest-osobe");
+const festTip = document.getElementById("fest-tip");
+const festSlike = document.getElementById("fest-slike");
 
 const xhttp = new XMLHttpRequest();
 
@@ -133,8 +155,13 @@ function createOrg(data) {
         <td>${value["godinaOsnivanja"]}</td>
         <td><button class="btn-fest" id="${obj}" data-festivalsID="${value["festivali"]}">${count} festivala</button></td>
         <td>
-          <button class="btn btn-success btnIzmeniOrg" style="display: inline-block" onclick="scrollToTop(), toggleOverlayOrg()">Izmeni</button>
-          <button class="btn btn-danger btnObrisiOrg" style="display: inline-block">Obriši</button>
+          <button class="btn btn-success btnIzmeniOrg" style="display: inline-block" 
+    onclick="scrollToTop(); toggleOverlayOrg(); 
+             setOrgInitValues('${value["naziv"]}', '${value["adresa"]}', '${value["kontaktTelefon"]}', '${value["email"]}', '${value["godinaOsnivanja"]}', '${value["logo"]}');">
+    Izmeni
+</button>
+
+          <button class="btn btn-danger btnObrisiOrg" style="display: inline-block"  onclick="if (confirm('Da li ste sigurni da želite da obrišete entitet?')) {return true;} else {return false;}">Obriši</button>
       </td>
       </tr>
       `;
@@ -184,8 +211,13 @@ function createUser(data) {
       <td>${value["telefon"]}</td>
       <td>${value["zanimanje"]}</td>
       <td>
-        <button class="btn btn-success btnIzmeniK" id="izmena-kor" style="display: inline-block" onclick="scrollToTop(), toggleOverlayUser()">Izmeni</button>
-        <button class="btn btn-danger btnObrisiK" style="display: inline-block">Obriši</button>
+        <button class="btn btn-success btnIzmeniK" id="izmena-kor" style="display: inline-block" 
+    onclick="scrollToTop(); toggleOverlayUser(); 
+             setUserInitValues('${value["ime"]}', '${value["prezime"]}', '${value["korisnickoIme"]}', '${value["email"]}', '${value["lozinka"]}', '${value["datumRodjenja"]}', '${value["adresa"]}', '${value["telefon"]}', '${value["zanimanje"]}');">
+    Izmeni
+</button>
+
+        <button class="btn btn-danger btnObrisiK" style="display: inline-block" onclick="if (confirm('Da li ste sigurni da želite da obrišete entitet?')) {return true;} else {return false;}">Obriši</button>
     </td>
     </tr>
     `;
@@ -247,8 +279,8 @@ function createFest(festivals) {
       <td>${value["maxOsoba"]}</td>
       <td>${value["tip"]}</td>
       <td>
-        <button class="btn btn-success btnIzmeniF" id="izmena-kor" style="display: inline-block" onclick="scrollToTop(), toggleOverlayFest()">Izmeni</button>
-        <button class="btn btn-danger btnObrisiF" style="display: inline-block">Obriši</button>
+        <!--<button class="btn btn-success btnIzmeniF" id="izmena-kor" style="display: inline-block" onclick="scrollToTop(); toggleOverlayFest(); setFestInitValues('${value["naziv"]}', '${value["cena"]}', '${value["opis"]}', '${value["prevoz"]}', '${value["maxOsoba"]}', '${value["tip"]}', '${value["slike"]}');">Izmeni</button>-->
+        <button class="btn btn-danger btnObrisiF" style="display: inline-block" onclick="if (confirm('Da li ste sigurni da želite da obrišete entitet?')) {return true;} else {return false;}">Obriši</button>
       </td>
     </tr>
     `;
@@ -277,3 +309,35 @@ btnKor.addEventListener("click", (event) => {
   btnOrg.classList.remove("active");
   btnAdd.classList.remove("active");
 });
+
+function setUserInitValues(ime, prezime, korisnickoIme, email, lozinka, datumRodjenja, adresa, telefon, zanimanje) {
+  korIme.value = ime;
+  korPrezime.value = prezime;
+  korKorIme.value = korisnickoIme;
+  korEmail.value = email;
+  korLozinka.value = lozinka;
+  korDatRodj.value = datumRodjenja;
+  korAdresa.value = adresa;
+  korTelefon.value = telefon;
+  korZanimanje.value = zanimanje;
+  
+}
+
+function setOrgInitValues(naziv, adresa, kontaktTelefon, email, godinaOsnivanja, link) {
+  orgIme.value = naziv;
+  orgAdresa.value = adresa;
+  orgKontaktTelefon.value = kontaktTelefon;
+  orgEmail.value = email;
+  orgGodinaOsnivanja.value = godinaOsnivanja;
+  orgLink.value = link;
+}
+
+function setFestInitValues(naziv, cena, opis, prevoz, maxOsoba, tip, slike) {
+  festIme.value = naziv;
+  festCena.value = cena;
+  festOpis.value = opis;
+  festPrevoz.value = prevoz;
+  festMaxOsoba.value = maxOsoba;
+  festTip.value = tip;
+  festSlike.value = slike;
+}
