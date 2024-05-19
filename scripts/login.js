@@ -1,3 +1,5 @@
+let firebaseDatabase =
+  "https://wd-sv-15-2023-default-rtdb.europe-west1.firebasedatabase.app";
 const wrapper = document.querySelector(".wrapper");
 const registrationForm2 = document.querySelector(".registration2");
 const registrationForm3 = document.querySelector(".registration3");
@@ -12,6 +14,15 @@ const registerLink = document.querySelector(".register-link");
 const loginForm = document.querySelector(".login");
 const login = document.getElementById("prijava");
 const loginBtn = document.getElementById("login-btn");
+const regKorIme = document.getElementById("reg-korIme");
+const regEmail = document.getElementById("reg-email");
+const regLozinka = document.getElementById("reg-lozinka");
+const regBroj = document.getElementById("reg-broj");
+const regAdresa = document.getElementById("reg-adresa");
+const regIme = document.getElementById("reg-ime");
+const regPrezime = document.getElementById("reg-prezime");
+const regZanimanje = document.getElementById("reg-zanimanje");
+const regDatum = document.getElementById("reg-datum");
 
 let dugmadZaGasenje = document.getElementsByClassName("icon-close");
 for (let dugmeZaGasenje of dugmadZaGasenje) {
@@ -79,6 +90,8 @@ register.addEventListener("click", () => {
   event.preventDefault();
   toggleOverlay();
 });
+
+
 function scrollToTop() {
   window.scrollTo({
     top: 0,
@@ -101,3 +114,64 @@ function toggleOverlay() {
 
 
 login.addEventListener("click", scrollToTop);
+
+function registerUser() {
+  let korIme = regKorIme.value.trim();
+  let email = regEmail.value.trim();
+  let lozinka = regLozinka.value.trim();
+  let broj = regBroj.value.trim();
+  let adresa = regAdresa.value.trim();
+  let ime = regIme.value.trim();
+  let prezime = regPrezime.value.trim();
+  let zanimanje = regZanimanje.value.trim();
+  let datum = regDatum.value.trim();
+
+  
+  if (!korIme || !email || !lozinka || !broj || !adresa || !ime || !prezime || !zanimanje || !datum) {
+    alert("Molimo Vas da popunite sva polja!");
+    return;
+  }
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  if (!emailPattern.test(email)) {
+    alert("Unesite ispravnu email adresu.");
+    return;
+  }
+  if (lozinka.length < 6) {
+    alert("Lozinka mora imati najmanje 6 karaktera.");
+    return;
+  }
+  const phonePattern = /^[0-9]+$/;
+  if (!phonePattern.test(broj)) {
+    alert("Broj telefona mora sadržavati samo cifre.");
+    return;
+  }
+  let korisnik = {
+    adresa: adresa,
+    datumRodjenja: datum,
+    email: email,
+    ime: ime,
+    korisnickoIme: korIme,
+    lozinka: lozinka,
+    prezime: prezime,
+    telefon: broj,
+    zanimanje: zanimanje
+  };
+
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState === 4) {
+      if (this.status === 200) {
+        alert("Registracija uspešna!");
+        console.log(this.responseText);
+      } else {
+        alert("Došlo je do greške prilikom registracije. Pokušajte ponovo.");
+        console.error(this.statusText);
+        location.href = "../error.html";
+      }
+    }
+  };
+
+  xhttp.open("POST", firebaseDatabase + "/korisnici.json", true);
+  xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhttp.send(JSON.stringify(korisnik));
+}

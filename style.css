@@ -106,7 +106,7 @@
 }
 
 input[type="search"]::-webkit-search-cancel-button {
-  filter: grayscale(1);
+  display: none;
 }
 
 .navbar-toggler {
@@ -351,7 +351,7 @@ footer img {
 }
 
 .fest_cont {
-  max-height: 500vh;
+  max-height: 800vh;
   padding-bottom: 20vh;
   position: relative;
   flex-direction: row;
@@ -756,6 +756,14 @@ footer img {
 
 #reg2, #reg3, #back1, #back2 {
   width: 50%;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.highlight2 {
+  background-color: rgb(220, 120, 20);
 }
 
 

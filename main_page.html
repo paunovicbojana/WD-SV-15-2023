@@ -70,13 +70,13 @@
             <h2>Registrujte se 1/3</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Korisničko ime" />
+                <input type="text" placeholder="Korisničko ime" id="reg-korIme"/>
               </div>
               <div class="input-box">
-                <input type="password" placeholder="Lozinka" />
+                <input type="password" placeholder="Lozinka" id = "reg-lozinka"/>
               </div>
               <div class="input-box">
-                <input type="email" placeholder="E-mail adresa" />
+                <input type="email" placeholder="E-mail adresa" id="reg-email" />
               </div>
               <div class="button-box">
                 <button type="submit" class="btn1" class="next-link1" id="reg1">
@@ -99,13 +99,13 @@
             <h2>Registrujte se 2/3</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Ime" />
+                <input type="text" placeholder="Ime" id="reg-ime" />
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Prezime" />
+                <input type="text" placeholder="Prezime" id="reg-prezime" />
               </div>
               <div class="input-box">
-                <input type="date" placeholder="Datum rođenja" />
+                <input type="date" placeholder="Datum rođenja" id="reg-datum"/>
               </div>
               <div class="button-box">
                 <button type="button" class="btn1" id="back1">Back</button>
@@ -122,17 +122,17 @@
             <h2>Registrujte se 3/3</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Adresa" />
+                <input type="text" placeholder="Adresa" id="reg-adresa"/>
               </div>
               <div class="input-box">
-                <input type="tel" placeholder="Broj telefona" />
+                <input type="tel" placeholder="Broj telefona" id="reg-broj"/>
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Zanimanje" />
+                <input type="text" placeholder="Zanimanje" id="reg-zanimanje"/>
               </div>
               <div class="button-box">
                 <button type="button" class="btn1" id="back2">Back</button>
-                <button type="submit" class="btn1" id="reg3">Register</button>
+                <button type="submit" class="btn1" id="reg3" onclick="registerUser()">Register</button>
               </div>
             </form>
           </div>
@@ -183,19 +183,9 @@
                   type="search"
                   placeholder="Pretražite"
                   aria-label="Search"
+                  id="organizer-search"
                 />
-                <button
-                  class="btn searchb"
-                  type="submit"
-                  style="
-                    color: #3d3028;
-                    background-color: #e6ddc7;
-                    font-weight: bold;
-                    border-radius: 20px;
-                  "
-                >
-                  Pretražite
-                </button>
+                
               </form>
             </div>
           </div>
@@ -313,20 +303,14 @@
     </script>
     <script>
       var logo = document.getElementById("logo");
-      var home = document.getElementById("home");
 
       logo.addEventListener("click", function () {
-        +window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-      home.addEventListener("click", function () {
         window.scrollTo({
           top: 0,
           behavior: "smooth",
         });
       });
+      
     </script>
     <script src="scripts/read_more.js"></script>
     <script src="scripts/login.js"></script>

@@ -1,5 +1,5 @@
-const firebaseDatabase =
-  "https://wd-sv-15-2023-default-rtdb.europe-west1.firebasedatabase.app";
+let firebaseDatabase =
+  "https://wd-sv-15-2023-default-rtdb.europe-west1.firebaseDatabase.app";
 
 let tableKor = document.getElementById("tableKor");
 let tableOrg = document.getElementById("tableOrg");
@@ -29,6 +29,41 @@ const festPrevoz = document.getElementById("fest-prevoz");
 const festMaxOsoba = document.getElementById("fest-osobe");
 const festTip = document.getElementById("fest-tip");
 const festSlike = document.getElementById("fest-slike");
+const festIme1 = document.getElementById("fest-naziv1");
+const festCena1 = document.getElementById("fest-cena1");
+const festOpis1 = document.getElementById("fest-opis1");
+const festPrevoz1 = document.getElementById("fest-prevoz1");
+const festMaxOsoba1 = document.getElementById("fest-osobe1");
+const festTip1 = document.getElementById("fest-tip1");
+const festSlike1 = document.getElementById("fest-slike1");  
+const wrapper = document.querySelector(".wrapper");
+const registrationForm2 = document.querySelector(".registration2");
+const registrationForm3 = document.querySelector(".registration3");
+const loginLink = document.querySelector(".login-link");
+const nextLink1 = document.getElementById("reg1");
+const nextLink2 = document.getElementById("reg2");
+const register = document.getElementById("reg3");
+const registrationForm1 = document.querySelector(".registration1");
+const registerLink = document.querySelector(".register-link");
+const loginForm = document.querySelector(".login");
+
+const prevLink1 = document.getElementById("back1");
+const prevLink2 = document.getElementById("back2");
+const login = document.getElementById("prijava");
+prevLink1.addEventListener("click", () => {
+  registrationForm2.classList.remove("active");
+  registrationForm1.classList.add("active");
+  event.preventDefault();
+});
+prevLink2.addEventListener("click", () => {
+  registrationForm3.classList.remove("active");
+  registrationForm2.classList.add("active");
+  event.preventDefault();
+}
+);
+
+
+const dodajFestivalBtn = document.getElementById("dodajFestivalBtn");
 
 const xhttp = new XMLHttpRequest();
 
@@ -38,7 +73,8 @@ xhttp.onreadystatechange = function () {
       let data = JSON.parse(this.responseText);
       createOrg(data);
     } else {
-      console.log("Error:", this.status);
+      console.log("or:", this.status);
+      location.href = "../error.html";
     }
   }
 };
@@ -55,6 +91,7 @@ xhttp2.onreadystatechange = function () {
       createUser(data);
     } else {
       console.log("Error:", this.status);
+      location.href = "../error.html";
     }
   }
 };
@@ -74,10 +111,12 @@ function fetchFestivals(fest, callback) {
           callback(count);
         } else {
           console.log("Error: Empty response received");
+          location.href = "../error.html";
           callback(0);
         }
       } else {
         console.log("Error fetching festivals:", this.status);
+        location.href = "../error.html";
         callback(0);
       }
     }
@@ -101,6 +140,7 @@ function fetchFestivals2(id) {
         }
       } else {
         console.log("Error fetching festivals:", this.status);
+        location.href = "../error.html";
       }
     }
   };
@@ -115,9 +155,11 @@ function fetchFestivals3(festivals) {
     if (this.readyState == 4) {
       if (this.status == 200) {
         let data = JSON.parse(this.responseText);
-        createFest(data);
+        dodajFestivalBtn.setAttribute("data-festivalsID", festivals);
+        createFest(festivals, data);
       } else {
         console.log("Error fetching festivals:", this.status);
+        location.href = "../error.html";
       }
     }
   };
@@ -161,7 +203,7 @@ function createOrg(data) {
     Izmeni
 </button>
 
-          <button class="btn btn-danger btnObrisiOrg" style="display: inline-block"  onclick="if (confirm('Da li ste sigurni da želite da obrišete entitet?')) {return true;} else {return false;}">Obriši</button>
+          <button class="btn btn-danger btnObrisiOrg" style="display: inline-block"  onclick="if (confirm('Da li ste sigurni da želite da obrišete entitet?')) {obrisiOrg('${obj}')} else {return false;}">Obriši</button>
       </td>
       </tr>
       `;
@@ -217,7 +259,7 @@ function createUser(data) {
     Izmeni
 </button>
 
-        <button class="btn btn-danger btnObrisiK" style="display: inline-block" onclick="if (confirm('Da li ste sigurni da želite da obrišete entitet?')) {return true;} else {return false;}">Obriši</button>
+        <button class="btn btn-danger btnObrisiK" style="display: inline-block" onclick="if (confirm('Da li ste sigurni da želite da obrišete entitet?')) {obrisiKorisnika('${obj}')} else {return false;}">Obriši</button>
     </td>
     </tr>
     `;
@@ -228,7 +270,7 @@ function createUser(data) {
   tableKor.innerHTML = innerHTML;
 }
 
-function createFest(festivals) {
+function createFest(festsID, festivals) {
   let innerHTML = `<thead>
             <tr>
               <th scope="col">Slike</th>
@@ -280,7 +322,7 @@ function createFest(festivals) {
       <td>${value["tip"]}</td>
       <td>
         <!--<button class="btn btn-success btnIzmeniF" id="izmena-kor" style="display: inline-block" onclick="scrollToTop(); toggleOverlayFest(); setFestInitValues('${value["naziv"]}', '${value["cena"]}', '${value["opis"]}', '${value["prevoz"]}', '${value["maxOsoba"]}', '${value["tip"]}', '${value["slike"]}');">Izmeni</button>-->
-        <button class="btn btn-danger btnObrisiF" style="display: inline-block" onclick="if (confirm('Da li ste sigurni da želite da obrišete entitet?')) {return true;} else {return false;}">Obriši</button>
+        <button class="btn btn-danger btnObrisiF" style="display: inline-block" onclick="if (confirm('Da li ste sigurni da želite da obrišete entitet?')) {obrisiFestival('${festsID}','${fest}')} else {return false;}">Obriši</button>
       </td>
     </tr>
     `;
@@ -340,4 +382,232 @@ function setFestInitValues(naziv, cena, opis, prevoz, maxOsoba, tip, slike) {
   festMaxOsoba.value = maxOsoba;
   festTip.value = tip;
   festSlike.value = slike;
+}
+
+function obrisiOrg(id) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+        console.log("Organizator uspešno obrisan");
+        location.reload();
+      } else {
+        console.log("Error:", this.status);
+        location.href = "../error.html";
+      }
+    }
+  };
+
+  xhttp.open("DELETE", firebaseDatabase + "/organizatoriFestivala/" + id + ".json");
+  xhttp.send();
+}
+
+function obrisiKorisnika(id) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+        console.log("Korisnik uspešno obrisan");
+        location.reload();
+      } else {
+        console.log("Error:", this.status);
+        location.href = "../error.html";
+      }
+    }
+  };
+
+  xhttp.open("DELETE", firebaseDatabase + "/korisnici/" + id + ".json");
+  xhttp.send();
+}
+
+function obrisiFestival(festivali, id) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+        console.log("Festival uspešno obrisan");
+        location.reload();
+      } else {
+        console.log("Error:", this.status);
+        location.href = "../error.html";
+      }
+    }
+  };
+
+  xhttp.open("DELETE", firebaseDatabase + "/festivali/" + festivali +"/" + id + ".json");
+  xhttp.send();
+}
+
+function dodajFestival() {
+  // Get the festival ID from the button's data attribute
+  let festsID = dodajFestivalBtn.getAttribute("data-festivalsID");
+
+  // Validate inputs
+  let cena = festCena1.value.trim();
+  let maxOsoba = festMaxOsoba1.value.trim();
+  let naziv = festIme1.value.trim();
+  let opis = festOpis1.value.trim();
+  let prevoz = festPrevoz1.value.trim();
+  let slike = festSlike1.value.trim().split(",");
+  let tip = festTip1.value.trim();
+
+  // Check for empty fields
+  if (!cena || !maxOsoba || !naziv || !opis || !prevoz || !slike.length || !tip) {
+    alert("Sva polja moraju biti popunjena.");
+    return;
+  }
+
+  // Check if cena and maxOsoba are valid numbers
+  else if (isNaN(cena) || isNaN(maxOsoba)) {
+    alert("Cena i Maksimalan broj osoba moraju biti brojevi.");
+    return;
+  }
+
+  else{
+  // Prepare the XMLHttpRequest
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+        console.log("Festival uspešno dodat");
+        location.reload();
+      } else {
+        console.log("Error:", this.status);
+        location.href = "../error.html";
+      }
+    }
+  };
+
+  // Open the request and set headers
+  xhttp.open("POST", firebaseDatabase + "/festivali/" + festsID + ".json", true);
+  xhttp.setRequestHeader("Content-Type", "application/json");
+
+  // Send the request with the festival data
+  xhttp.send(
+    JSON.stringify({
+      cena: cena,
+      maxOsoba: maxOsoba,
+      naziv: naziv,
+      opis: opis,
+      prevoz: prevoz,
+      slike: slike,
+      tip: tip
+    })
+  );}
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+function toggleOverlay() {
+  wrapper.classList.toggle("active");
+
+  if (wrapper.classList.contains("active")) {
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+  } else {
+    document.body.style.overflow = "";
+    document.body.style.height = "";
+  }
+}
+
+registerLink.addEventListener("click", () => {
+  registrationForm1.classList.add("active");
+  loginForm.classList.remove("active");
+  event.preventDefault();
+});
+
+loginLink.addEventListener("click", () => {
+  loginForm.classList.add("active");
+  registrationForm1.classList.remove("active");
+  event.preventDefault();
+});
+
+nextLink1.addEventListener("click", () => {
+  registrationForm1.classList.remove("active");
+  registrationForm2.classList.add("active");
+  event.preventDefault();
+});
+
+nextLink2.addEventListener("click", () => {
+  registrationForm2.classList.remove("active");
+  registrationForm3.classList.add("active");
+  event.preventDefault();
+});
+
+register.addEventListener("click", () => {
+  registrationForm3.classList.remove("active");
+  wrapper.classList.remove("active");
+  loginForm.classList.add("active");
+  login.disabled = false;
+  event.preventDefault();
+  toggleOverlay();
+});
+
+
+function registerUser() {
+  let korIme = regKorIme.value.trim();
+  let email = regEmail.value.trim();
+  let lozinka = regLozinka.value.trim();
+  let broj = regBroj.value.trim();
+  let adresa = regAdresa.value.trim();
+  let ime = regIme.value.trim();
+  let prezime = regPrezime.value.trim();
+  let zanimanje = regZanimanje.value.trim();
+  let datum = regDatum.value.trim();
+
+  if (!korIme || !email || !lozinka || !broj || !adresa || !ime || !prezime || !zanimanje || !datum) {
+    alert("Molimo Vas da popunite sva polja!");
+    return;
+  }
+
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  if (!emailPattern.test(email)) {
+    alert("Unesite ispravnu email adresu.");
+    return;
+  }
+
+  if (lozinka.length < 6) {
+    alert("Lozinka mora imati najmanje 6 karaktera.");
+    return;
+  }
+
+  const phonePattern = /^[0-9]+$/;
+  if (!phonePattern.test(broj)) {
+    alert("Broj telefona mora sadržavati samo cifre.");
+    return;
+  }
+  let korisnik = {
+    adresa: adresa,
+    datumRodjenja: datum,
+    email: email,
+    ime: ime,
+    korisnickoIme: korIme,
+    lozinka: lozinka,
+    prezime: prezime,
+    telefon: broj,
+    zanimanje: zanimanje
+  };
+
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState === 4) {
+      if (this.status === 200) {
+        alert("Registracija uspešna!");
+        console.log(this.responseText);
+      } else {
+        alert("Došlo je do greške prilikom registracije. Pokušajte ponovo.");
+        console.error(this.statusText);
+        location.href = "../error.html";
+      }
+    }
+  };
+
+  xhttp.open("POST", firebaseDatabase + "/korisnici.json", true);
+  xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhttp.send(JSON.stringify(korisnik));
 }

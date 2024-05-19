@@ -1,3 +1,6 @@
+let allOrganizers = null;
+let allFestivals = null;
+
 function getFestivals() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get("festivals");
@@ -14,6 +17,8 @@ const parent = document.getElementById("fest_cont");
 const parent2 = document.getElementById("hero2");
 const parent3 = document.getElementById("hero-gradient2");
 const parent4 = document.getElementById("body2");
+const searchByName = document.getElementById("searchbyname");
+const searchByType = document.getElementById("searchbytype");
 
 const fest = getFestivals();
 
@@ -24,12 +29,14 @@ function fetchFestivals() {
     if (this.readyState == 4) {
       if (this.status == 200) {
         let data = JSON.parse(this.responseText);
+        allFestivals = data;
         for (let obj in data) {
           let festival = data[obj];
           createCard(obj, festival);
         }
       } else {
         console.log("Error fetching festivals:", this.status);
+        location.href = "../error.html";
       }
     }
   };
@@ -46,6 +53,7 @@ function fetchOrganizer() {
     if (this.readyState == 4) {
       if (this.status == 200) {
         let data = JSON.parse(this.responseText);
+        allOrganizers = data;
         for (let obj in data) {
           if (obj === organizator) {
             let logo = data[obj]["logo"];
@@ -87,6 +95,7 @@ function fetchOrganizer() {
         }
       } else {
         console.log("Error fetching organizer:", this.status);
+        location.href = "../error.html";
       }
     }
   };
@@ -128,7 +137,7 @@ function createCard(festival_id, festival_data) {
       <h4>${festival_data["naziv"]}<br></h4>
       <p><strong>Cena: </strong>${festival_data["cena"]} dinara<br>
         <strong>Prevoz:</strong> ${festival_data["prevoz"]}<br>
-        <strong>Tip festivala:</strong> ${festival_data["tip"]}<br>
+        <strong>Tip festivala:</strong><span class="tipFestivalaText">${festival_data["tip"]}</span><br>
         <a href="./festival.html?festivals=${fest}&festival=${festival_id}" class="rm">Pročitajte više...</a></p>
     </div>
   `;
@@ -138,3 +147,132 @@ function createCard(festival_id, festival_data) {
 
 fetchFestivals();
 fetchOrganizer();
+
+searchByName.addEventListener("keyup", (event) => {
+  let search = event.target.value.toLowerCase();
+  let allCards = document.querySelectorAll(".cards2");
+  allCards.forEach((card) => {
+    let cardData = card.querySelector("h4");
+    let text = cardData.innerText.toLowerCase();
+    if (text.includes(search)) {
+      card.style.display = "flex";
+      let originalText = cardData.innerText;
+      let highlightedText = originalText.replace(new RegExp(search, 'gi'), (match) => {
+        return `<span class="highlight">${match}</span>`;
+      });
+      cardData.innerHTML = highlightedText;
+    } else {
+      card.style.display = "none";
+      cardData.innerHTML = cardData.innerText;
+    }
+  });
+});
+
+searchByType.addEventListener("keyup", (event) => {
+  let search = event.target.value.toLowerCase();
+  let allCards = document.querySelectorAll(".cards2");
+  allCards.forEach((card) => {
+    let cardData = card.querySelector(".tipFestivalaText");
+    let text = cardData.innerText.toLowerCase();
+    if (text.includes(search)) {
+      card.style.display = "flex";
+      let originalText = cardData.innerText;
+      let highlightedText = originalText.replace(new RegExp(search, 'gi'), (match) => {
+        return `<span class="highlight2">${match}</span>`;
+      });
+      cardData.innerHTML = highlightedText;
+    } else {
+      card.style.display = "none";
+      cardData.innerHTML = cardData.innerText;
+    }
+  });
+});
+
+
+
+const wrapper = document.querySelector(".wrapper");
+const registrationForm2 = document.querySelector(".registration2");
+const registrationForm3 = document.querySelector(".registration3");
+const loginLink = document.querySelector(".login-link");
+const nextLink1 = document.getElementById("reg1");
+const prevLink1 = document.getElementById("back1");
+const prevLink2 = document.getElementById("back2");
+const nextLink2 = document.getElementById("reg2");
+const register = document.getElementById("reg3");
+const registrationForm1 = document.querySelector(".registration1");
+const registerLink = document.querySelector(".register-link");
+const loginForm = document.querySelector(".login");
+const login = document.getElementById("prijava");
+const loginBtn = document.getElementById("login-btn");
+
+
+login.addEventListener("click", () => {
+  wrapper.classList.add("active");
+  loginForm.classList.add("active");
+  login.disabled = true;
+  event.preventDefault();
+});
+
+registerLink.addEventListener("click", () => {
+  registrationForm1.classList.add("active");
+  loginForm.classList.remove("active");
+  event.preventDefault();
+});
+
+loginLink.addEventListener("click", () => {
+  loginForm.classList.add("active");
+  registrationForm1.classList.remove("active");
+  event.preventDefault();
+});
+
+nextLink1.addEventListener("click", () => {
+  registrationForm1.classList.remove("active");
+  registrationForm2.classList.add("active");
+  event.preventDefault();
+});
+
+prevLink1.addEventListener("click", () => {
+  registrationForm2.classList.remove("active");
+  registrationForm1.classList.add("active");
+  event.preventDefault();
+});
+nextLink2.addEventListener("click", () => {
+  registrationForm2.classList.remove("active");
+  registrationForm3.classList.add("active");
+  event.preventDefault();
+});
+
+prevLink2.addEventListener("click", () => {
+  registrationForm3.classList.remove("active");
+  registrationForm2.classList.add("active");
+  event.preventDefault();
+}
+);
+register.addEventListener("click", () => {
+  registrationForm3.classList.remove("active");
+  wrapper.classList.remove("active");
+  loginForm.classList.add("active");
+  login.disabled = false;
+  event.preventDefault();
+  toggleOverlay();
+});
+
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+function toggleOverlay() {
+  wrapper.classList.toggle("active");
+
+  if (wrapper.classList.contains("active")) {
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+  } else {
+    document.body.style.overflow = "";
+    document.body.style.height = "";
+  }
+}

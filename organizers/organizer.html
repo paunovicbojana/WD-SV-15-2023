@@ -70,13 +70,13 @@
             <h2>Registrujte se 1/3</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Korisničko ime" />
+                <input type="text" placeholder="Korisničko ime" id="reg-korIme"/>
               </div>
               <div class="input-box">
-                <input type="password" placeholder="Lozinka" />
+                <input type="password" placeholder="Lozinka" id = "reg-lozinka"/>
               </div>
               <div class="input-box">
-                <input type="email" placeholder="E-mail adresa" />
+                <input type="email" placeholder="E-mail adresa" id="reg-email" />
               </div>
               <div class="button-box">
                 <button type="submit" class="btn1" class="next-link1" id="reg1">
@@ -99,15 +99,16 @@
             <h2>Registrujte se 2/3</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Ime" />
+                <input type="text" placeholder="Ime" id="reg-ime" />
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Prezime" />
+                <input type="text" placeholder="Prezime" id="reg-prezime" />
               </div>
               <div class="input-box">
-                <input type="date" placeholder="Datum rođenja" />
+                <input type="date" placeholder="Datum rođenja" id="reg-datum"/>
               </div>
               <div class="button-box">
+                <button type="button" class="btn1" id="back1">Back</button>
                 <button type="submit" class="btn1" class="next-link2" id="reg2">
                   Next
                 </button>
@@ -121,20 +122,22 @@
             <h2>Registrujte se 3/3</h2>
             <form action="#">
               <div class="input-box">
-                <input type="text" placeholder="Adresa" />
+                <input type="text" placeholder="Adresa" id="reg-adresa"/>
               </div>
               <div class="input-box">
-                <input type="tel" placeholder="Broj telefona" />
+                <input type="tel" placeholder="Broj telefona" id="reg-broj"/>
               </div>
               <div class="input-box">
-                <input type="text" placeholder="Zanimanje" />
+                <input type="text" placeholder="Zanimanje" id="reg-zanimanje"/>
               </div>
               <div class="button-box">
-                <button type="submit" class="btn1" id="reg3">Register</button>
+                <button type="button" class="btn1" id="back2">Back</button>
+                <button type="submit" class="btn1" id="reg3" onclick="registerUser()">Register</button>
               </div>
             </form>
           </div>
         </div>
+
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
           <div class="container-fluid">
             <a class="navbar-brand" id="logo" href="../main_page.html"
@@ -178,21 +181,17 @@
                 <input
                   class="form-control me-2"
                   type="search"
-                  placeholder="Pretražite"
+                  placeholder="Pretražite po nazivu"
                   aria-label="Search"
+                  id="searchbyname"
                 />
-                <button
-                  class="btn searchb"
-                  type="submit"
-                  style="
-                    color: #3d3028;
-                    background-color: #e6ddc7;
-                    font-weight: bold;
-                    border-radius: 20px;
-                  "
-                >
-                  Pretražite
-                </button>
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Pretražite po tipu"
+                  aria-label="Search"
+                  id="searchbytype"
+                />
               </form>
             </div>
           </div>
