@@ -17,6 +17,7 @@ const fest = getFestival();
 const sviFest = getFestivals();
 const xhttp = new XMLHttpRequest();
 
+
 xhttp.onreadystatechange = function () {
   if (this.readyState == 4) {
     if (this.status == 200) {
@@ -98,7 +99,9 @@ const registerLink = document.querySelector(".register-link");
 const loginForm = document.querySelector(".login");
 const login = document.getElementById("prijava");
 const loginBtn = document.getElementById("login-btn");
-
+loginBtn.addEventListener("click", () => {
+  event.preventDefault();
+});
 
 login.addEventListener("click", () => {
   wrapper.classList.add("active");
@@ -169,4 +172,41 @@ function toggleOverlay() {
     document.body.style.overflow = "";
     document.body.style.height = "";
   }
+}
+function loginUser() {
+  let korIme = document.getElementById("korIme").value.trim();
+  let lozinka = document.getElementById("lozinka").value.trim();
+
+  if (!korIme || !lozinka) {
+    alert("Molimo Vas da popunite sva polja!");
+    return;
+  }
+
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState === 4) {
+      if (this.status === 200) {
+        let korisnici = JSON.parse(this.responseText);
+        let korisnik = null;
+        for (let key in korisnici) {
+          if (korisnici[key].korisnickoIme === korIme && korisnici[key].lozinka === lozinka) {
+            korisnik = korisnici[key];
+            break;
+          }
+        }
+        if (korisnik) {
+          alert("Uspešno ste se prijavili!");
+        } else {
+          alert("Pogrešno korisničko ime ili lozinka. Pokušajte ponovo.");
+        }
+      } else {
+        alert("Došlo je do greške prilikom prijave. Pokušajte ponovo.");
+        console.error(this.statusText);
+        location.href = "../error.html";
+      }
+    }
+  };
+
+  xhttp.open("GET", firebaseDatabase + "/korisnici.json", true);
+  xhttp.send();
 }
