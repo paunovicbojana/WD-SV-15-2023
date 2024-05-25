@@ -1,6 +1,4 @@
-let firebaseDatabase =
-  "https://wd-sv-15-2023-default-rtdb.europe-west1.firebasedatabase.app";
-const wrapper = document.querySelector(".wrapper");
+
 const registrationForm2 = document.querySelector(".registration2");
 const registrationForm3 = document.querySelector(".registration3");
 const loginLink = document.querySelector(".login-link");
@@ -23,6 +21,7 @@ const regIme = document.getElementById("reg-ime");
 const regPrezime = document.getElementById("reg-prezime");
 const regZanimanje = document.getElementById("reg-zanimanje");
 const regDatum = document.getElementById("reg-datum");
+const wrapper = document.querySelector(".wrapper");
 
 let dugmadZaGasenje = document.getElementsByClassName("icon-close");
 for (let dugmeZaGasenje of dugmadZaGasenje) {

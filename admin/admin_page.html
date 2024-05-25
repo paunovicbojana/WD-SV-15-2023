@@ -200,7 +200,7 @@
                 <input id="kor-izm-zanimanje" type="text" placeholder="Zanimanje" />
               </div>
               <div class="button-box">
-                <button type="submit" class="btn1" id="cd3"  onclick="if (confirm('Da li ste sigurni da želite da izmenite podatke?')) {return true;} else {return false;}">Update</button>
+                <button type="submit" class="btn1" id="cd3" onclick="if (result = confirm('Da li ste sigurni da želite da izmenite podatke?')) {changeUser()} else {return false;}">Update</button>
               </div>
             </form>
           </div>
@@ -246,7 +246,7 @@
                 <input type="text" placeholder="Logo - link" id="org-link" />
               </div>
               <div class="button-box">
-                <button type="submit" class="btn1" class="next-link2" id="cd2o"  onclick="if (confirm('Da li ste sigurni da želite da izmenite podatke?')) {return true;} else {return false;}">
+                <button type="submit" class="btn1" class="next-link2" id="cd2o"  onclick="if (confirm('Da li ste sigurni da želite da izmenite podatke?')) {changeOrg()} else {return false;}">
                   Update
                 </button>
               </div>

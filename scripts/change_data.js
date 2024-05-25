@@ -9,7 +9,7 @@ let changeData3User = document.querySelector(".changeData3");
 let cd1 = document.getElementById("cd1");
 let cd2 = document.getElementById("cd2");
 let cd3 = document.getElementById("cd3");
-let izmenaKor = document.getElementById("izmena-kor");
+let izmenaKor = document.querySelector(".izmena-kor");
 let wrapperOrg = document.querySelector(".change-data-wrapper-org");
 let cd1o = document.getElementById("cd1o");
 let cd2o = document.getElementById("cd2o");
@@ -164,3 +164,4 @@ function toggleOverlayFestI() {
     document.body.style.height = "";
   }
 }
+
