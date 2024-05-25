@@ -148,45 +148,43 @@ function createCard(festival_id, festival_data) {
 fetchFestivals();
 fetchOrganizer();
 
-searchByName.addEventListener("keyup", (event) => {
-  let search = event.target.value.toLowerCase();
+function handleSearch() {
+  let nameSearch = searchByName.value.toLowerCase();
+  let typeSearch = searchByType.value.toLowerCase();
   let allCards = document.querySelectorAll(".cards2");
+
   allCards.forEach((card) => {
-    let cardData = card.querySelector("h4");
-    let text = cardData.innerText.toLowerCase();
-    if (text.includes(search)) {
+    let nameData = card.querySelector("h4");
+    let typeData = card.querySelector(".tipFestivalaText");
+    let nameText = nameData.innerText.toLowerCase();
+    let typeText = typeData.innerText.toLowerCase();
+
+    let matchesName = nameText.includes(nameSearch);
+    let matchesType = typeText.includes(typeSearch);
+
+    if (matchesName && matchesType) {
       card.style.display = "flex";
-      let originalText = cardData.innerText;
-      let highlightedText = originalText.replace(new RegExp(search, 'gi'), (match) => {
+
+      let originalNameText = nameData.innerText;
+      let highlightedNameText = originalNameText.replace(new RegExp(nameSearch, 'gi'), (match) => {
         return `<span class="highlight">${match}</span>`;
       });
-      cardData.innerHTML = highlightedText;
-    } else {
-      card.style.display = "none";
-      cardData.innerHTML = cardData.innerText;
-    }
-  });
-});
+      nameData.innerHTML = highlightedNameText;
 
-searchByType.addEventListener("keyup", (event) => {
-  let search = event.target.value.toLowerCase();
-  let allCards = document.querySelectorAll(".cards2");
-  allCards.forEach((card) => {
-    let cardData = card.querySelector(".tipFestivalaText");
-    let text = cardData.innerText.toLowerCase();
-    if (text.includes(search)) {
-      card.style.display = "flex";
-      let originalText = cardData.innerText;
-      let highlightedText = originalText.replace(new RegExp(search, 'gi'), (match) => {
+      let originalTypeText = typeData.innerText;
+      let highlightedTypeText = originalTypeText.replace(new RegExp(typeSearch, 'gi'), (match) => {
         return `<span class="highlight2">${match}</span>`;
       });
-      cardData.innerHTML = highlightedText;
+      typeData.innerHTML = highlightedTypeText;
     } else {
       card.style.display = "none";
-      cardData.innerHTML = cardData.innerText;
+      nameData.innerHTML = nameData.innerText; 
+      typeData.innerHTML = typeData.innerText; 
     }
   });
-});
+}
+searchByName.addEventListener("keyup", handleSearch);
+searchByType.addEventListener("keyup", handleSearch);
 
 
 
