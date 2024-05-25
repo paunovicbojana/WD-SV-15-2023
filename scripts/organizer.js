@@ -11,7 +11,7 @@ function getOrganizer() {
   return urlParams.get("organizer");
 }
 
-const firebaseDatabase =
+let firebaseDatabase2 =
   "https://wd-sv-15-2023-default-rtdb.europe-west1.firebasedatabase.app/";
 const parent = document.getElementById("fest_cont");
 const parent2 = document.getElementById("hero2");
@@ -41,7 +41,7 @@ function fetchFestivals() {
     }
   };
 
-  xhttp.open("GET", firebaseDatabase + "festivali/" + fest + ".json");
+  xhttp.open("GET", firebaseDatabase2 + "festivali/" + fest + ".json");
   xhttp.send();
 }
 
@@ -100,7 +100,7 @@ function fetchOrganizer() {
     }
   };
 
-  xhttp.open("GET", firebaseDatabase + "/organizatoriFestivala.json");
+  xhttp.open("GET", firebaseDatabase2 + "/organizatoriFestivala.json");
   xhttp.send();
 }
 

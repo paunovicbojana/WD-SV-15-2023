@@ -1,4 +1,5 @@
-
+let firebaseDatabase1 =
+  "https://wd-sv-15-2023-default-rtdb.europe-west1.firebaseDatabase.app";
 const registrationForm2 = document.querySelector(".registration2");
 const registrationForm3 = document.querySelector(".registration3");
 const loginLink = document.querySelector(".login-link");
@@ -170,7 +171,7 @@ function registerUser() {
     }
   };
 
-  xhttp.open("POST", firebaseDatabase + "/korisnici.json", true);
+  xhttp.open("POST", firebaseDatabase1 + "/korisnici.json", true);
   xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhttp.send(JSON.stringify(korisnik));
 }
@@ -209,6 +210,6 @@ function loginUser() {
     }
   };
 
-  xhttp.open("GET", firebaseDatabase + "/korisnici.json", true);
+  xhttp.open("GET", firebaseDatabase1 + "/korisnici.json", true);
   xhttp.send();
 }

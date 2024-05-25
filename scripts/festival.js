@@ -7,7 +7,7 @@ function getFestivals() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get("festivals");
 }
-const firebaseDatabase =
+let firebaseDatabase3 =
   "https://wd-sv-15-2023-default-rtdb.europe-west1.firebasedatabase.app";
 
 const parent = document.getElementById("festival");
@@ -32,7 +32,7 @@ xhttp.onreadystatechange = function () {
 
 xhttp.open(
   "GET",
-  firebaseDatabase + "/festivali/" + sviFest + "/" + fest + ".json"
+  firebaseDatabase3 + "/festivali/" + sviFest + "/" + fest + ".json"
 );
 xhttp.send();
 

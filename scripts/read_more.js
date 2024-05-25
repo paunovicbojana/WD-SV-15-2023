@@ -1,4 +1,4 @@
-const firebasedatabase =
+let firebasedatabase =
   "https://wd-sv-15-2023-default-rtdb.europe-west1.firebasedatabase.app";
 const parent = document.getElementById("organizers");
 const organizerSearch = document.getElementById("organizer-search");
